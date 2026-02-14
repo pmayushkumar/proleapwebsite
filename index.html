@@ -1,0 +1,1073 @@
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dreelio - Freelance Platform</title>
+<!-- Fonts: Nunito for headings, Inter (proxy for Geist) for body -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Nunito:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<!-- Custom Tailwind Config override for specific fonts/colors in script tag to keep single file -->
+<script>
+tailwind.config = {
+theme: {
+extend: {
+fontFamily: {
+sans: ['Inter', 'sans-serif'],
+nunito: ['Nunito', 'sans-serif'],
+},
+colors: {
+cream: {
+50: '#FDFBF9',
+100: '#F7F5F2',
+200: '#EAE5DC',
+},
+sky: {
+100: '#Dbeafe', // fallback
+}
+},
+animation: {
+'fade-in': 'fadeIn 1s ease-out forwards',
+'slide-up': 'slideUp 1s ease-out forwards',
+},
+keyframes: {
+fadeIn: {
+'0%': { opacity: '0' },
+'100%': { opacity: '1' },
+},
+slideUp: {
+'0%': { opacity: '0', transform: 'translateY(20px)' },
+'100%': { opacity: '1', transform: 'translateY(0)' },
+}
+}
+}
+}
+}
+</script>
+<style>
+/* Hide scrollbar for clean UI */
+::-webkit-scrollbar {
+width: 0px;
+background: transparent;
+}
+/* Custom smooth scroll behavior */
+html {
+scroll-behavior: smooth;
+}
+/* Chart bar animation */
+.chart-bar {
+transition: height 1s ease-out;
+}
+</style>
+  <meta name="disabled-font-classes" content="font-nunito,font-roboto,font-montserrat,font-poppins,font-merriweather,font-manrope,font-space-grotesk,font-work-sans,font-pt-serif,font-geist-mono,font-space-mono,font-quicksand,font-newsreader,font-google-sans-flex,font-oswald,font-dm-sans,font-cormorant,font-bricolage,font-jakarta,font-instrument-serif"><link id="all-fonts-link-font-playfair" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap"><style id="all-fonts-style-font-playfair">.font-playfair { font-family: 'Playfair Display', serif !important; }</style><link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist">.font-geist { font-family: 'Geist', sans-serif !important; }</style></head>
+<body class="antialiased min-h-screen overflow-x-hidden selection:bg-black selection:text-white text-slate-800 font-sans bg-[#ABCDE9] relative">
+
+    <!-- Background Layer: Sky Image & Cloud/Gradient Simulation -->
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <!-- Sky Background Image -->
+        <img src="https://images.unsplash.com/photo-1707130868349-3ed75fc7fe8f?w=3840&amp;q=80" alt="Sky Background" class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-multiply">
+        
+        <!-- Gradient Overlay to create the fade-to-warm-beige effect at bottom -->
+        <div class="absolute inset-0 bg-gradient-to-b from-[#A6CBE8]/20 via-[#BFD9EF]/40 to-[#EAE3D6]"></div>
+        
+        <!-- Cloud Decoration Left -->
+        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4734259a-bad7-422f-981e-ce01e79184f2_1600w.jpg" class="absolute top-[20%] -left-[10%] w-[50%] opacity-40 mix-blend-screen blur-xl pointer-events-none" alt="cloud">
+        
+        <!-- Cloud Decoration Right -->
+        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg" class="absolute top-[30%] -right-[10%] w-[50%] opacity-40 mix-blend-screen blur-xl pointer-events-none" alt="cloud">
+    </div>
+
+    <!-- Content Wrapper -->
+    <div class="flex flex-col min-h-screen z-10 relative">
+
+    <!-- Navigation -->
+    <nav class="md:px-12 flex animate-fade-in w-full max-w-7xl mr-auto ml-auto pt-6 pr-6 pb-6 pl-6 items-center justify-between">
+        <div class="flex gap-2 gap-x-2 gap-y-2 items-center">
+            <!-- Logo Icon -->
+            <div class="bg-blue-500 w-6 h-6 rounded-lg"></div>
+            <span class="text-xl font-medium text-slate-900 tracking-tight font-playfair">ProLeap</span>
+        </div>
+
+        <div class="hidden md:flex gap-8 text-[15px] font-medium text-slate-700 gap-x-8 gap-y-8 items-center">
+            <a href="#" class="transition-colors hover:text-black font-geist">Features</a>
+
+
+            <a href="#" class="transition-colors hover:text-black font-geist">About</a>
+            <a href="#" class="transition-colors hover:text-black font-geist">Contact Us</a>
+        </div>
+
+        <div class="">
+            <button class="text-[15px] transition-all hover:shadow-xl hover:-translate-y-0.5 hover:bg-blue-800 font-medium text-white font-geist bg-blue-500 rounded-full pt-2.5 pr-6 pb-2.5 pl-6 shadow-lg">
+                    Join the waitlist
+                </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="flex-grow flex flex-col md:px-6 w-full max-w-7xl mr-auto ml-auto pt-16 pr-4 pb-20 pl-4 items-center">
+
+        <!-- Hero Text -->
+        <div class="animate-slide-up text-center max-w-4xl mr-auto mb-16 ml-auto" style="animation-delay: 0.1s">
+            <h1 class="md:text-[80px] leading-[1] text-6xl font-medium text-neutral-950 tracking-tight font-playfair mb-8">
+                Professional Coaching <br>for the rest of us</h1>
+            <p class="md:text-[19px] leading-relaxed text-lg font-medium text-slate-600 font-geist max-w-2xl mr-auto mb-10 ml-auto">
+                Proleap joins your meetings to provide real-time behavioral feedback based on social science, turning
+                every sync
+                into a measurable step toward your next promotion.</p>
+
+            <div class="flex flex-col sm:flex-row gap-4 gap-x-4 gap-y-4 items-center justify-center">
+                <button class="text-[17px] transition-all hover:shadow-xl hover:-translate-y-0.5 sm:w-auto hover:bg-blue-800 font-medium text-white font-geist bg-blue-500 w-full rounded-full pt-3.5 pr-8 pb-3.5 pl-8 shadow-lg">Join the waitlist</button>
+                <button class="text-[17px] transition-all sm:w-auto flex hover:bg-white/60 font-medium text-neutral-950 font-geist bg-neutral-50/50 w-full border-white/50 border rounded-full pt-3.5 pr-8 pb-3.5 pl-8 backdrop-blur-md gap-x-2 gap-y-2 items-center justify-center">
+                        See features
+                    </button>
+            </div>
+        </div>
+
+        <!-- Dashboard Mockup -->
+        <div class="overflow-hidden flex flex-col md:flex-row animate-slide-up bg-neutral-50 w-full h-[800px] max-w-[1300px] border-white/60 border rounded-[32px] relative shadow-2xl" style="animation-delay: 0.3s; box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.15), 0 30px 60px -30px rgba(0, 0, 0, 0.1)">
+        </div>
+    </main>
+    <section class="md:px-6 w-full max-w-7xl z-10 mr-auto ml-auto pt-24 pr-4 pb-24 pl-4 relative">
+        <!-- Section Header -->
+        <div class="animate-fade-in text-center max-w-3xl mr-auto mb-16 ml-auto">
+            <span class="uppercase block text-xs font-bold text-slate-500 tracking-widest font-geist mb-4">OUR MISSION</span>
+            <h2 class="md:text-5xl text-3xl font-medium text-neutral-950 tracking-tight font-playfair mb-6">Democratizing Professional Excellence</h2>
+            <p class="text-lg font-medium text-slate-600 font-geist">Most professional growth stalls because of unsaid
+                feedback. Proleap acts as your private AI shadow coach, surfacing the blind spots and communication
+                nuances that even the best mentors might miss, giving you the clarity to course-correct before the
+                performance review.</p>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <!-- Project Management Card -->
+            <div class="hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group overflow-hidden bg-neutral-50 border-white/60 border rounded-[32px] pt-8 pr-8 pb-8 pl-8 relative shadow-lg backdrop-blur-md">
+                <div class="absolute inset-0 bg-gradient-to-br via-transparent to-transparent opacity-50 pointer-events-none from-white">
+                </div>
+                <div class="flex group-hover:scale-110 transition-transform duration-300 text-slate-900 bg-blue-100 w-14 h-14 border-white border rounded-2xl mb-6 shadow-sm items-center justify-center">
+
+                </div>
+                <h3 class="text-xl font-medium text-neutral-950 font-playfair mb-3">Middle Manager Crisis</h3>
+                <p class="text-[15px] leading-relaxed text-slate-600 font-geist">Flattening hierarchies (42% role
+                    reduction) and a lack of formal training have created a "coaching vacuum" where managers no longer
+                    have the time or skill to mentor their teams.</p>
+            </div>
+
+            <!-- Invoicing Card -->
+            <div class="hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group overflow-hidden bg-neutral-50 border-white/60 border rounded-[32px] pt-8 pr-8 pb-8 pl-8 relative shadow-lg backdrop-blur-md">
+                <div class="absolute inset-0 bg-gradient-to-br via-transparent to-transparent opacity-50 pointer-events-none from-white">
+                </div>
+
+                <div class="flex group-hover:scale-110 transition-transform duration-300 text-slate-900 bg-blue-100 w-14 h-14 border-white border rounded-2xl mb-6 shadow-sm items-center justify-center">
+
+                </div>
+                <h3 class="text-xl font-medium text-neutral-950 font-playfair mb-3">The Hybrid Visibility Gap</h3>
+                <p class="text-[15px] leading-relaxed text-slate-600 font-geist">With 40% of work now hybrid, organic
+                    "hallway mentorship" has vanished, necessitating digital-native tools to restore the feedback loops
+                    lost when the Zoom screen goes black.</p>
+            </div>
+
+            <!-- Client CRM Card -->
+            <div class="hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group overflow-hidden bg-neutral-50 border-white/60 border rounded-[32px] pt-8 pr-8 pb-8 pl-8 relative shadow-lg backdrop-blur-md">
+                <div class="absolute inset-0 bg-gradient-to-br via-transparent to-transparent opacity-50 pointer-events-none from-white">
+                </div>
+
+                <div class="flex group-hover:scale-110 transition-transform duration-300 text-slate-900 bg-blue-100 w-14 h-14 border-white border rounded-2xl mb-6 shadow-sm items-center justify-center">
+
+                </div>
+                <h3 class="text-xl font-medium text-neutral-950 font-playfair mb-3">The "Human Skill" Premium</h3>
+                <p class="text-[15px] leading-relaxed text-slate-600 font-geist">Rapid AI adoption has shifted the
+                    professional competitive advantage to interpersonal influence and empathy, turning communication
+                    coaching into a critical career survival tool.</p>
+            </div>
+
+        </div>
+    </section>
+</div><section class="md:px-12 z-10 w-full max-w-7xl mr-auto ml-auto pt-24 pr-4 pb-24 pl-4 relative">
+
+    <!-- Feature Block 1: Project Management -->
+    <div class="flex flex-col lg:flex-row gap-12 lg:gap-24 mb-32 gap-x-12 gap-y-12 items-center">
+
+        <!-- Interactive Mockup (Left) -->
+        <div class="lg:w-[55%] group w-full relative">
+            <!-- Decorative Gradient Background -->
+
+
+            <!-- Main Mockup Container -->
+            <div class="transition-transform duration-500 hover:scale-[1.01] md:p-12 min-h-[500px] bg-neutral-50 rounded-3xl pt-8 pr-8 pb-8 pl-8 relative shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)]">
+
+                <!-- App Window -->
+
+            </div>
+        </div>
+
+        <!-- Content (Right) -->
+        <div class="lg:w-[45%] w-full">
+            <span class="uppercase block text-xs font-bold text-slate-500 tracking-widest font-geist mb-4">Post-Meeting Learning</span>
+            <h2 class="leading-[1.15] lg:text-[46px] text-4xl font-medium text-neutral-950 tracking-tight font-playfair mb-6">
+                Meeting Debrief</h2>
+            <p class="leading-relaxed text-lg font-medium text-slate-600 font-geist mb-10">Immediate,
+                "hot-off-the-press" analysis delivered right after a meeting ends. It highlights "The Good, The Bad, and
+                The Ugly," offering specific alternative phrasing for moments where the user struggled.
+            </p>
+
+            <button class="text-[15px] transition-all hover:shadow-xl hover:-translate-y-0.5 hover:bg-blue-800 font-semibold text-white font-geist bg-blue-500 rounded-full mb-12 pt-3.5 pr-8 pb-3.5 pl-8 shadow-lg">Join the waitlist</button>
+
+            <div class="grid grid-cols-2 gap-x-4 gap-y-4 hidden">
+                <div class="flex gap-3 hover:shadow-md transition-all cursor-default hover:bg-white hover:border-slate-200 bg-white/50 border-slate-100 border rounded-2xl pt-4 pr-6 pb-4 pl-6 gap-x-3 gap-y-3 items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-slate-800">
+                        <rect x="3" y="5" width="6" height="6" rx="1" class=""></rect>
+                        <path d="m3 17 2 2 4-4"></path>
+                        <path d="M13 6h8"></path>
+                        <path d="M13 12h8"></path>
+                        <path d="M13 18h8"></path>
+                    </svg>
+                    <span class="text-sm font-semibold font-geist text-slate-700">Tasks</span>
+                </div>
+                <div class="flex gap-3 hover:shadow-md transition-all cursor-default hover:bg-white hover:border-slate-200 bg-white/50 border-slate-100 border rounded-2xl pt-4 pr-6 pb-4 pl-6 gap-x-3 gap-y-3 items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-slate-800">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <span class="text-sm font-semibold font-geist text-slate-700">Time tracking</span>
+                </div>
+                <div class="flex items-center gap-3 px-6 py-4 rounded-2xl border hover:shadow-md transition-all cursor-default border-slate-100 bg-white/50 hover:bg-white hover:border-slate-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-slate-800">
+                        <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+                        <path d="M3 9h18"></path>
+                        <path d="M3 15h18"></path>
+                        <path d="M9 3v18"></path>
+                        <path d="M15 3v18"></path>
+                    </svg>
+                    <span class="text-sm font-semibold font-geist text-slate-700">Timesheets</span>
+                </div>
+                <div class="flex items-center gap-3 px-6 py-4 rounded-2xl border hover:shadow-md transition-all cursor-default border-slate-100 bg-white/50 hover:bg-white hover:border-slate-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-slate-800">
+                        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <path d="M16 13h-2.5a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H12">
+                        </path>
+                        <path d="M12 18h2.5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5H16">
+                        </path>
+                    </svg>
+                    <span class="text-sm font-semibold font-geist text-slate-700">Reports</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-col lg:flex-row lg:gap-24 mb-32 gap-x-12 gap-y-12 items-center">
+
+        <!-- Interactive Mockup (Left) -->
+
+
+        <!-- Content (Right) -->
+        <div class="lg:w-[45%] w-full">
+            <span class="uppercase block text-xs font-bold text-slate-500 tracking-widest font-geist mb-4">professional reflection</span>
+            <h2 class="lg:text-[46px] leading-[1.15] text-4xl font-medium text-neutral-950 tracking-tight font-playfair mb-6">
+                Sidebar</h2>
+            <p class="leading-relaxed text-lg font-medium text-slate-600 font-geist mb-10">Ask clarifying questions
+                about specific meeting feedback (e.g., "Why did you flag my tone as defensive at the 10-minute mark?")
+                or discuss broader career challenges ("I’m struggling to get my boss to trust my technical decisions -
+                how should I approach our next 1:1?")</p>
+
+            <button class="text-[15px] transition-all hover:shadow-xl hover:-translate-y-0.5 hover:bg-blue-800 font-semibold text-white font-geist bg-blue-500 rounded-full mb-12 pt-3.5 pr-8 pb-3.5 pl-8 shadow-lg">Join the waitlist</button>
+
+            <div class="grid grid-cols-2 gap-x-4 gap-y-4 hidden">
+                <div class="flex gap-3 hover:shadow-md transition-all cursor-default hover:bg-white hover:border-slate-200 bg-white/50 border-slate-100 border rounded-2xl pt-4 pr-6 pb-4 pl-6 gap-x-3 gap-y-3 items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-slate-800">
+                        <rect x="3" y="5" width="6" height="6" rx="1" class=""></rect>
+                        <path d="m3 17 2 2 4-4"></path>
+                        <path d="M13 6h8"></path>
+                        <path d="M13 12h8"></path>
+                        <path d="M13 18h8"></path>
+                    </svg>
+                    <span class="text-sm font-semibold font-geist text-slate-700">Tasks</span>
+                </div>
+                <div class="flex gap-3 hover:shadow-md transition-all cursor-default hover:bg-white hover:border-slate-200 bg-white/50 border-slate-100 border rounded-2xl pt-4 pr-6 pb-4 pl-6 gap-x-3 gap-y-3 items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-slate-800">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <span class="text-sm font-semibold font-geist text-slate-700">Time tracking</span>
+                </div>
+                <div class="flex items-center gap-3 px-6 py-4 rounded-2xl border hover:shadow-md transition-all cursor-default border-slate-100 bg-white/50 hover:bg-white hover:border-slate-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-slate-800">
+                        <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+                        <path d="M3 9h18"></path>
+                        <path d="M3 15h18"></path>
+                        <path d="M9 3v18"></path>
+                        <path d="M15 3v18"></path>
+                    </svg>
+                    <span class="text-sm font-semibold font-geist text-slate-700">Timesheets</span>
+                </div>
+                <div class="flex items-center gap-3 px-6 py-4 rounded-2xl border hover:shadow-md transition-all cursor-default border-slate-100 bg-white/50 hover:bg-white hover:border-slate-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-slate-800">
+                        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <path d="M16 13h-2.5a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H12">
+                        </path>
+                        <path d="M12 18h2.5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5H16">
+                        </path>
+                    </svg>
+                    <span class="text-sm font-semibold font-geist text-slate-700">Reports</span>
+                </div>
+            </div>
+        </div>
+        <div class="lg:w-[55%] group w-full relative">
+            <!-- Decorative Gradient Background -->
+
+
+            <!-- Main Mockup Container -->
+            <div class="transition-transform duration-500 hover:scale-[1.01] md:p-12 min-h-[500px] bg-neutral-50 rounded-3xl pt-8 pr-8 pb-8 pl-8 relative shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)]">
+
+                <!-- App Window -->
+
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-col lg:flex-row lg:gap-24 mb-32 gap-x-12 gap-y-12 items-center">
+
+        <!-- Interactive Mockup (Left) -->
+        <div class="lg:w-[55%] group w-full relative">
+            <!-- Decorative Gradient Background -->
+
+
+            <!-- Main Mockup Container -->
+            <div class="transition-transform duration-500 hover:scale-[1.01] md:p-12 min-h-[500px] bg-neutral-50 rounded-3xl pt-8 pr-8 pb-8 pl-8 relative shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)]">
+
+                <!-- App Window -->
+
+            </div>
+        </div>
+
+        <!-- Content (Right) -->
+        <div class="lg:w-[45%] w-full">
+            <span class="uppercase block text-xs font-bold text-slate-500 tracking-widest font-geist mb-4">Growth Validation</span>
+            <h2 class="leading-[1.15] lg:text-[46px] text-4xl font-medium text-neutral-950 tracking-tight font-playfair mb-6">
+                Growth Progress Tracker</h2>
+            <p class="leading-relaxed text-lg font-medium text-slate-600 font-geist mb-10">Prove the ROI of your
+                personal development to yourself and your leadership. Proleap offers visual dashboards that track
+                specific metrics over time, like the reduction in "defensive language" or "interruption frequency."</p>
+
+            <button class="text-[15px] transition-all hover:shadow-xl hover:-translate-y-0.5 hover:bg-blue-800 font-semibold text-white font-geist bg-blue-500 rounded-full mb-12 pt-3.5 pr-8 pb-3.5 pl-8 shadow-lg">Join the waitlist</button>
+
+            <div class="grid grid-cols-2 gap-x-4 gap-y-4 hidden">
+                <div class="flex gap-3 hover:shadow-md transition-all cursor-default hover:bg-white hover:border-slate-200 bg-white/50 border-slate-100 border rounded-2xl pt-4 pr-6 pb-4 pl-6 gap-x-3 gap-y-3 items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-slate-800">
+                        <rect x="3" y="5" width="6" height="6" rx="1" class=""></rect>
+                        <path d="m3 17 2 2 4-4"></path>
+                        <path d="M13 6h8"></path>
+                        <path d="M13 12h8"></path>
+                        <path d="M13 18h8"></path>
+                    </svg>
+                    <span class="text-sm font-semibold font-geist text-slate-700">Tasks</span>
+                </div>
+                <div class="flex gap-3 hover:shadow-md transition-all cursor-default hover:bg-white hover:border-slate-200 bg-white/50 border-slate-100 border rounded-2xl pt-4 pr-6 pb-4 pl-6 gap-x-3 gap-y-3 items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-slate-800">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <span class="text-sm font-semibold font-geist text-slate-700">Time tracking</span>
+                </div>
+                <div class="flex items-center gap-3 px-6 py-4 rounded-2xl border hover:shadow-md transition-all cursor-default border-slate-100 bg-white/50 hover:bg-white hover:border-slate-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-slate-800">
+                        <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+                        <path d="M3 9h18"></path>
+                        <path d="M3 15h18"></path>
+                        <path d="M9 3v18"></path>
+                        <path d="M15 3v18"></path>
+                    </svg>
+                    <span class="text-sm font-semibold font-geist text-slate-700">Timesheets</span>
+                </div>
+                <div class="flex items-center gap-3 px-6 py-4 rounded-2xl border hover:shadow-md transition-all cursor-default border-slate-100 bg-white/50 hover:bg-white hover:border-slate-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-slate-800">
+                        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <path d="M16 13h-2.5a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H12">
+                        </path>
+                        <path d="M12 18h2.5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5H16">
+                        </path>
+                    </svg>
+                    <span class="text-sm font-semibold font-geist text-slate-700">Reports</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-col lg:flex-row lg:gap-24 mb-32 gap-x-12 gap-y-12 items-center">
+
+        <!-- Interactive Mockup (Left) -->
+
+
+        <!-- Content (Right) -->
+        <div class="lg:w-[45%] w-full">
+            <span class="uppercase block text-xs font-bold text-slate-500 tracking-widest font-geist mb-4">Preparation &amp; Intention</span>
+            <h2 class="leading-[1.15] lg:text-[46px] text-4xl font-medium text-neutral-950 tracking-tight font-playfair mb-6">
+                Meeting Prep Flashcards</h2>
+            <p class="leading-relaxed text-lg font-medium text-slate-600 font-geist mb-10">AI-generated "mental
+                warm-ups." Before a high-stakes meeting, the app gives you 2–3 specific intentions (e.g., "In this
+                meeting, try to wait 2 seconds before responding to questions").</p>
+
+            <button class="text-[15px] transition-all hover:shadow-xl hover:-translate-y-0.5 hover:bg-blue-800 font-semibold text-white font-geist bg-blue-500 rounded-full mb-12 pt-3.5 pr-8 pb-3.5 pl-8 shadow-lg">Join the waitlist</button>
+
+            <div class="grid grid-cols-2 gap-x-4 gap-y-4 hidden">
+                <div class="flex gap-3 hover:shadow-md transition-all cursor-default hover:bg-white hover:border-slate-200 bg-white/50 border-slate-100 border rounded-2xl pt-4 pr-6 pb-4 pl-6 gap-x-3 gap-y-3 items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-slate-800">
+                        <rect x="3" y="5" width="6" height="6" rx="1" class=""></rect>
+                        <path d="m3 17 2 2 4-4"></path>
+                        <path d="M13 6h8"></path>
+                        <path d="M13 12h8"></path>
+                        <path d="M13 18h8"></path>
+                    </svg>
+                    <span class="text-sm font-semibold font-geist text-slate-700">Tasks</span>
+                </div>
+                <div class="flex gap-3 hover:shadow-md transition-all cursor-default hover:bg-white hover:border-slate-200 bg-white/50 border-slate-100 border rounded-2xl pt-4 pr-6 pb-4 pl-6 gap-x-3 gap-y-3 items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-slate-800">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <span class="text-sm font-semibold font-geist text-slate-700">Time tracking</span>
+                </div>
+                <div class="flex items-center gap-3 px-6 py-4 rounded-2xl border hover:shadow-md transition-all cursor-default border-slate-100 bg-white/50 hover:bg-white hover:border-slate-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-slate-800">
+                        <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+                        <path d="M3 9h18"></path>
+                        <path d="M3 15h18"></path>
+                        <path d="M9 3v18"></path>
+                        <path d="M15 3v18"></path>
+                    </svg>
+                    <span class="text-sm font-semibold font-geist text-slate-700">Timesheets</span>
+                </div>
+                <div class="flex items-center gap-3 px-6 py-4 rounded-2xl border hover:shadow-md transition-all cursor-default border-slate-100 bg-white/50 hover:bg-white hover:border-slate-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-slate-800">
+                        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <path d="M16 13h-2.5a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H12">
+                        </path>
+                        <path d="M12 18h2.5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5H16">
+                        </path>
+                    </svg>
+                    <span class="text-sm font-semibold font-geist text-slate-700">Reports</span>
+                </div>
+            </div>
+        </div>
+        <div class="lg:w-[55%] group w-full relative">
+            <!-- Decorative Gradient Background -->
+
+
+            <!-- Main Mockup Container -->
+            <div class="transition-transform duration-500 hover:scale-[1.01] md:p-12 min-h-[500px] bg-neutral-50 rounded-3xl pt-8 pr-8 pb-8 pl-8 relative shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)]">
+
+                <!-- App Window -->
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Feature Block 2: Financial Management -->
+    <div class="flex flex-col-reverse lg:flex-row gap-12 lg:gap-24 gap-x-12 gap-y-12 items-center">
+
+        <!-- Content (Left) -->
+        <div class="lg:w-[55%] group w-full relative">
+            <!-- Decorative Gradient Background -->
+
+
+            <!-- Main Mockup Container -->
+            <div class="transition-transform duration-500 hover:scale-[1.01] md:p-12 min-h-[500px] bg-neutral-50 rounded-3xl pt-8 pr-8 pb-8 pl-8 relative shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)]">
+
+                <!-- App Window -->
+
+            </div>
+        </div>
+        <div class="lg:w-[45%] w-full">
+            <span class="uppercase block text-xs font-bold text-slate-500 tracking-widest font-geist mb-4">continuous learning</span>
+            <h2 class="leading-[1.15] lg:text-[46px] text-4xl font-medium text-neutral-950 tracking-tight font-playfair mb-6">
+                Meeting Prep Flashcards</h2>
+            <p class="leading-relaxed text-lg font-medium text-slate-600 font-geist mb-10">A daily "scrollable" feed
+                (similar to a social media feed) highlighting your most important behavioral wins and areas for
+                improvement.</p>
+
+
+
+
+            <button class="text-[15px] transition-all hover:shadow-xl hover:-translate-y-0.5 hover:bg-blue-800 font-semibold text-white font-geist bg-blue-500 rounded-full mb-12 pt-3.5 pr-8 pb-3.5 pl-8 shadow-lg">Join the waitlist</button>
+        </div>
+
+        <!-- Interactive Mockup (Right) -->
+
+    </div>
+</section><style class="">
+    @keyframes scroll-row-1 {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-50% - 1rem)); }
+    }
+    @keyframes scroll-row-2 {
+        0% { transform: translateX(calc(-50% - 1rem)); }
+        100% { transform: translateX(0); }
+    }
+    .animate-infinite-scroll-1 {
+        animation: scroll-row-1 40s linear infinite;
+    }
+    .animate-infinite-scroll-2 {
+        animation: scroll-row-2 40s linear infinite;
+    }
+    .group:hover .animate-infinite-scroll-1,
+    .group:hover .animate-infinite-scroll-2 {
+        animation-play-state: paused;
+    }
+</style><section class="md:px-12 z-10 w-full max-w-7xl mr-auto ml-auto pt-24 pr-4 pb-24 pl-4 relative">
+    <!-- Section Header -->
+    <div class="animate-fade-in text-center max-w-3xl mr-auto mb-20 ml-auto">
+        <span class="uppercase block text-xs font-bold text-slate-500 tracking-widest font-geist mb-4 hidden">Our Mission</span>
+        <h2 class="md:text-[56px] leading-[1.1] text-4xl font-medium text-neutral-950 tracking-tight font-playfair mb-6">A world-class, unbiased shadow coach in the pocket of every professional.</h2>
+    </div>
+
+    <!-- Top Grid: Large Feature Cards -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8 gap-x-8 gap-y-8">
+        
+        <!-- Card 1: Customization -->
+        <div class="flex flex-col hover:shadow-xl transition-all duration-500 hover:-translate-y-1 group hover:border-slate-200/50 md:p-12 bg-blue-50 border-transparent border rounded-[32px] pt-8 pr-8 pb-8 pl-8 justify-between">
+            <h3 class="md:text-[28px] leading-tight text-2xl font-medium text-neutral-950 font-playfair max-w-md mb-10">Uncover hidden habits and understand your communication.</h3>
+
+            <!-- Interactive UI Mockup -->
+            <div class="overflow-hidden transition-transform duration-500 group-hover:scale-[1.02] bg-white h-40 border-slate-100/50 border rounded-md mb-10 pt-6 pr-6 pb-6 pl-6 relative shadow-sm">
+</div>
+
+            <p class="text-[17px] leading-relaxed text-slate-600 font-geist">A gamified onboarding experience using questions to identify the user's communication style. This ensures the AI "speaks your language" (e.g., direct vs. empathetic feedback).</p>
+        </div><div class="md:p-12 flex flex-col hover:shadow-xl transition-all duration-500 hover:-translate-y-1 group hover:border-slate-200/50 bg-blue-50 border-transparent border rounded-[32px] pt-8 pr-8 pb-8 pl-8 justify-between">
+            <h3 class="md:text-[28px] leading-tight text-2xl font-medium text-neutral-950 font-playfair max-w-md mb-10">Replace "winging it" with a data-backed game plan for meetings.</h3>
+
+            <!-- Interactive UI Mockup -->
+            <div class="overflow-hidden transition-transform duration-500 group-hover:scale-[1.02] bg-white h-40 border-slate-100/50 border rounded-md mb-10 pt-6 pr-6 pb-6 pl-6 relative shadow-sm">
+</div>
+
+            <p class="text-[17px] leading-relaxed text-slate-600 font-geist">Talk to an AI bot trained to act like your specific stakeholder (e.g., "The Skeptical CFO" or "The Passive-Aggressive Peer"). Practice your delivery and get instant feedback before the real stakes are on the line.</p>
+        </div>
+
+        <!-- Card 2: Integrations -->
+        
+
+    </div>
+
+    <!-- Bottom Grid: Small Feature Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 gap-x-8 gap-y-8">
+        
+        <!-- Feature 1 -->
+        <div class="md:p-10 flex flex-col gap-4 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group bg-blue-50 rounded-[32px] pt-8 pr-8 pb-8 pl-8 gap-x-4 gap-y-4 items-start">
+            <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 shadow-sm group-hover:scale-110 transition-transform bg-white">
+                
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 font-geist">Prevent Bad Habits</h4>
+            <p class="text-[15px] leading-relaxed text-slate-600 font-geist">A small, non-intrusive "traffic light" on your laptop screen. Silent nudges to let you know if you are speaking too fast or using filler words or if your tone is sounding aggressive/defensive.</p>
+        </div><div class="md:p-10 flex flex-col gap-4 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group bg-blue-50 rounded-[32px] pt-8 pr-8 pb-8 pl-8 gap-x-4 gap-y-4 items-start">
+            <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 shadow-sm group-hover:scale-110 transition-transform bg-white">
+                
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 font-geist">Prove your leadership</h4>
+            <p class="text-[15px] leading-relaxed text-slate-600 font-geist">Every 3 months, the AI generates a "State of the Union" report on your leadership style. "You are evolving from a 'Task-Master' into a 'Visionary.' Here is the data that proves it."</p>
+        </div><div class="md:p-10 flex flex-col gap-4 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group bg-blue-50 rounded-[32px] pt-8 pr-8 pb-8 pl-8 gap-x-4 gap-y-4 items-start">
+            <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 shadow-sm group-hover:scale-110 transition-transform bg-white">
+                
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 font-geist"> Keep soft skills sharp</h4>
+            <p class="text-[15px] leading-relaxed text-slate-600 font-geist">AI takes a transcript of a moment you "messed up" and lets you record yourself saying it again until the AI gives you a "High Impact" rating.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        
+
+        <!-- Feature 3 -->
+        
+    </div>
+</section><section class="z-10 bg-stone-50 w-full border-white/40 border-t pt-24 pb-24 relative">
+    <!-- Inline Style for Infinite Scroll Animation -->
+    <style>
+        @keyframes scroll-testimonials {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-scroll-testimonials {
+            animation: scroll-testimonials 80s linear infinite;
+        }
+        /* Pause animation on hover for better readability */
+        .animate-scroll-testimonials:hover {
+            animation-play-state: paused;
+        }
+    </style>
+
+    <!-- Header Content -->
+    <div class="z-10 text-center max-w-4xl mr-auto mb-20 ml-auto pr-6 pl-6 relative">
+        <h2 class="leading-[1.15] md:text-5xl text-3xl font-medium text-neutral-950 tracking-tight font-playfair mb-10 drop-shadow-sm">Big higlight quote from a testimonial that should ideally be three lines long to make it visually nice</h2>
+        
+        <div class="flex flex-col items-center justify-center gap-4 animate-fade-in">
+            <div class="p-1 rounded-full border shadow-sm bg-white border-slate-200">
+                <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c543a9e1-f226-4ced-80b0-feb8445a75b9_1600w.jpg" alt="Sarah Jenkins" class="w-16 h-16 rounded-full object-cover">
+            </div>
+            <div class="text-center">
+                <div class="text-lg font-bold text-neutral-950 font-geist">Testimonial Author</div>
+                <div class="text-sm font-medium text-slate-500 font-geist">Title, Organisation</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Infinite Scroll Container -->
+    <div class="relative w-full overflow-hidden pb-10">
+        <!-- Fade Masks for Smooth Edges -->
+        <div class="absolute inset-y-0 left-0 w-12 md:w-32 bg-gradient-to-r from-[#F6F4F0] to-transparent z-20 pointer-events-none"></div>
+        <div class="absolute inset-y-0 right-0 w-12 md:w-32 bg-gradient-to-l from-[#F6F4F0] to-transparent z-20 pointer-events-none"></div>
+
+        <!-- Scroll Track -->
+        <div class="flex animate-scroll-testimonials w-max gap-8 px-4">
+            
+            <!-- Set 1 -->
+            <div class="flex gap-8">
+                <!-- Card 1 -->
+                <div class="w-[340px] md:w-[420px] p-8 md:p-10 rounded-[32px] shadow-sm border flex flex-col justify-between hover:shadow-md transition-shadow duration-300 bg-white border-slate-100">
+                    <p class="text-[17px] leading-relaxed text-slate-600 font-geist mb-8">"As a fast-moving design team, we needed a tool that matched our pace. From client onboarding to getting paid, this just works clean, fast, and beautifully built."</p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/5bab247f-35d9-400d-a82b-fd87cfe913d2_1600w.webp" class="w-10 h-10 rounded-full object-cover border border-slate-100" alt="Sergio Walker">
+                        <div class="">
+                            <div class="text-sm font-bold font-geist text-slate-900">Sergio Walker</div>
+                            <div class="text-xs font-medium text-slate-500 font-geist">Agency Owner</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="w-[340px] md:w-[420px] p-8 md:p-10 rounded-[32px] shadow-sm border flex flex-col justify-between hover:shadow-md transition-shadow duration-300 bg-white border-slate-100">
+                    <p class="text-[17px] leading-relaxed mb-8 font-geist text-slate-600">"We used to duct-tape tools together. Now our contracts, time tracking, and payments live in one clean system. It's everything a small team needs to stay pro."</p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/30104e3c-5eea-4b93-93e9-5313698a7156_1600w.webp" class="w-10 h-10 rounded-full object-cover border border-slate-100" alt="Jane Jay Jay">
+                        <div class="">
+                            <div class="text-sm font-bold font-geist text-slate-900">Jane Jay Jay</div>
+                            <div class="text-xs font-medium text-slate-500 font-geist">Project Manager, Google</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="w-[340px] md:w-[420px] p-8 md:p-10 rounded-[32px] shadow-sm border flex flex-col justify-between hover:shadow-md transition-shadow duration-300 bg-white border-slate-100">
+                    <p class="text-[17px] leading-relaxed mb-8 font-geist text-slate-600">"The client portal is a game changer. My clients can see project progress and pay invoices in one place, which has drastically reduced our admin emails."</p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg" class="w-10 h-10 rounded-full object-cover border border-slate-100" alt="Marcus Reid">
+                        <div class="">
+                            <div class="text-sm font-bold font-geist text-slate-900">Marcus Reid</div>
+                            <div class="text-xs font-medium text-slate-500 font-geist">Freelance Developer</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="w-[340px] md:w-[420px] p-8 md:p-10 rounded-[32px] shadow-sm border flex flex-col justify-between hover:shadow-md transition-shadow duration-300 bg-white border-slate-100">
+                    <p class="text-[17px] leading-relaxed mb-8 font-geist text-slate-600">"Switching to OnePro gave us clarity on our cash flow that we never had before. It's intuitive, powerful, and actually enjoyable to use every day."</p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&amp;fit=crop&amp;w=100&amp;h=100" class="w-10 h-10 rounded-full object-cover border border-slate-100" alt="Elena Fisher">
+                        <div class="">
+                            <div class="text-sm font-bold font-geist text-slate-900">Elena Fisher</div>
+                            <div class="text-xs font-medium text-slate-500 font-geist">CFO, Creative Co.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Set 2 (Duplicate for Infinite Scroll) -->
+            <div class="flex gap-8">
+                <!-- Card 1 Duplicate -->
+                <div class="w-[340px] md:w-[420px] p-8 md:p-10 rounded-[32px] shadow-sm border flex flex-col justify-between hover:shadow-md transition-shadow duration-300 bg-white border-slate-100">
+                    <p class="text-[17px] leading-relaxed mb-8 font-geist text-slate-600">"As a fast-moving design team, we needed a tool that matched our pace. From client onboarding to getting paid, this just works clean, fast, and beautifully built."</p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/5bab247f-35d9-400d-a82b-fd87cfe913d2_1600w.webp" class="w-10 h-10 rounded-full object-cover border border-slate-100" alt="Sergio Walker">
+                        <div>
+                            <div class="text-sm font-bold font-geist text-slate-900">Sergio Walker</div>
+                            <div class="text-xs font-medium text-slate-500 font-geist">Agency Owner</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 Duplicate -->
+                <div class="w-[340px] md:w-[420px] p-8 md:p-10 rounded-[32px] shadow-sm border flex flex-col justify-between hover:shadow-md transition-shadow duration-300 bg-white border-slate-100">
+                    <p class="text-[17px] leading-relaxed mb-8 font-geist text-slate-600">"We used to duct-tape tools together. Now our contracts, time tracking, and payments live in one clean system. It's everything a small team needs to stay pro."</p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/30104e3c-5eea-4b93-93e9-5313698a7156_1600w.webp" class="w-10 h-10 rounded-full object-cover border border-slate-100" alt="Jane Jay Jay">
+                        <div>
+                            <div class="text-sm font-bold font-geist text-slate-900">Jane Jay Jay</div>
+                            <div class="text-xs font-medium text-slate-500 font-geist">Project Manager, Google</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 Duplicate -->
+                <div class="w-[340px] md:w-[420px] p-8 md:p-10 rounded-[32px] shadow-sm border flex flex-col justify-between hover:shadow-md transition-shadow duration-300 bg-white border-slate-100">
+                    <p class="text-[17px] leading-relaxed mb-8 font-geist text-slate-600">"The client portal is a game changer. My clients can see project progress and pay invoices in one place, which has drastically reduced our admin emails."</p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg" class="w-10 h-10 rounded-full object-cover border border-slate-100" alt="Marcus Reid">
+                        <div>
+                            <div class="text-sm font-bold font-geist text-slate-900">Marcus Reid</div>
+                            <div class="text-xs font-medium text-slate-500 font-geist">Freelance Developer</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 Duplicate -->
+                <div class="w-[340px] md:w-[420px] p-8 md:p-10 rounded-[32px] shadow-sm border flex flex-col justify-between hover:shadow-md transition-shadow duration-300 bg-white border-slate-100">
+                    <p class="text-[17px] leading-relaxed mb-8 font-geist text-slate-600">"Switching to OnePro gave us clarity on our cash flow that we never had before. It's intuitive, powerful, and actually enjoyable to use every day."</p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&amp;fit=crop&amp;w=100&amp;h=100" class="w-10 h-10 rounded-full object-cover border border-slate-100" alt="Elena Fisher">
+                        <div>
+                            <div class="text-sm font-bold font-geist text-slate-900">Elena Fisher</div>
+                            <div class="text-xs font-medium text-slate-500 font-geist">CFO, Creative Co.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section><section class="overflow-hidden z-10 bg-[#F6F4F0] w-full border-white/40 border-t pt-32 pb-0 relative hidden">
+    
+    <!-- Styles for Floating Animation & 3D Perspective -->
+    <style class="">
+        .perspective-container {
+            perspective: 2000px;
+        }
+        
+        @keyframes float-y {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .animate-float-1 { animation: float-y 6s ease-in-out infinite; }
+        .animate-float-2 { animation: float-y 7s ease-in-out infinite -2s; }
+        .animate-float-3 { animation: float-y 8s ease-in-out infinite -1s; }
+        
+        .card-3d {
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.6s ease;
+            transform-style: preserve-3d;
+        }
+        
+        .card-wrapper:hover .card-3d {
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.1) !important;
+            z-index: 50;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+    </style>
+
+    <!-- Content Container -->
+    
+</section><section class="z-10 bg-stone-50 w-full border-white/40 border-t pt-24 pb-32 relative">
+    
+    <!-- Animation Styles -->
+    <style class="">
+        @keyframes scroll-logos {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-scroll-logos {
+            animation: scroll-logos 40s linear infinite;
+        }
+    </style>
+
+    <!-- Content Container -->
+    <div class="max-w-7xl mr-auto ml-auto pr-6 pl-6">
+        
+        <!-- Header -->
+        <div class="animate-fade-in text-center max-w-3xl mr-auto mb-20 ml-auto">
+            <span class="text-xs font-bold tracking-widest text-slate-500 uppercase mb-5 block font-geist hidden">Pricing</span>
+            <h2 class="md:text-[56px] leading-[1.1] text-4xl font-medium text-neutral-950 tracking-tight font-playfair mb-6">Get started today</h2>
+            <p class="text-[17px] leading-relaxed font-medium text-slate-600 font-geist max-w-xl mr-auto mb-6 ml-auto">Join our waitlist to be notified when ProLeap launches. </p>
+        <button class="text-[17px] transition-all hover:shadow-xl hover:-translate-y-0.5 sm:w-auto hover:bg-blue-800 font-medium text-white font-geist bg-blue-500 w-full rounded-full pt-3.5 pr-8 pb-3.5 pl-8 shadow-lg">Join the waitlist</button></div>
+
+        <!-- Pricing Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:gap-8 mb-32 gap-x-6 gap-y-6 items-start hidden">
+            
+            <!-- Basic Plan -->
+            <div class="lg:p-10 flex flex-col hover:shadow-lg transition-shadow duration-300 bg-white h-full border-slate-100 border rounded-[32px] pt-8 pr-8 pb-8 pl-8 shadow-sm">
+                <h3 class="text-lg font-semibold text-slate-900 font-geist mb-2">OnePro Basic</h3>
+                <div class="text-4xl md:text-5xl text-[#1A1A1A] tracking-tight mb-4 font-playfair font-medium">Free</div>
+                <p class="text-sm text-slate-500 font-medium mb-10 leading-relaxed font-geist">For solo use with light needs. Perfect for freelancers just starting out.</p>
+                
+                <ul class="space-y-4 mb-10 flex-1">
+                    <li class="flex items-start gap-3 text-[15px] font-medium font-geist text-slate-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-slate-900"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Up to 3 active projects
+                    </li>
+                    <li class="flex items-start gap-3 text-[15px] font-medium font-geist text-slate-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-slate-900"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Unlimited clients
+                    </li>
+                    <li class="flex items-start gap-3 text-[15px] font-medium font-geist text-slate-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-slate-900"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Basic time tracking
+                    </li>
+                    <li class="flex items-start gap-3 text-[15px] font-medium font-geist text-slate-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-slate-900"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Simple CRM
+                    </li>
+                    <li class="flex items-start gap-3 text-[15px] font-medium font-geist text-slate-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-slate-900"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Mobile app access
+                    </li>
+                </ul>
+                
+                <button class="w-full py-4 rounded-full font-semibold text-[15px] transition-colors font-geist bg-slate-100 text-slate-900 hover:bg-slate-200">
+                    Try OnePro free
+                </button>
+            </div>
+
+            <!-- Premium Plan (Featured) -->
+            <div class="bg-gradient-to-b rounded-[32px] p-8 lg:p-10 border-[1.5px] relative shadow-xl flex flex-col h-full md:-mt-6 md:mb-6 z-10 from-blue-50 to-blue-100/50 border-blue-200">
+                <!-- Toggle -->
+                <div class="absolute top-8 right-8 md:static md:mb-8 md:flex md:justify-center">
+                    <div class="backdrop-blur-sm p-1 rounded-full inline-flex text-xs font-bold border shadow-sm bg-white/60 border-blue-100">
+                        <button class="px-4 py-1.5 rounded-full shadow-sm font-geist bg-white text-slate-900">Annually</button>
+                        <button class="px-4 py-1.5 text-slate-500 transition-colors font-geist hover:text-slate-900">Monthly</button>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3 mb-2 mt-8 md:mt-0">
+                    <h3 class="text-lg font-semibold font-geist text-slate-900">OnePro Premium</h3>
+                    <span class="text-[10px] font-bold px-2.5 py-1 rounded-full border uppercase tracking-wide font-geist bg-green-100 text-green-700 border-green-200">Save 20%</span>
+                </div>
+                
+                <div class="text-4xl md:text-5xl text-[#1A1A1A] tracking-tight mb-4 font-playfair font-medium">$39<span class="text-xl text-slate-500 ml-1 font-playfair font-medium">/mo</span></div>
+                <p class="text-sm text-slate-500 font-medium mb-10 leading-relaxed font-geist">For professional freelancers and growing studios.</p>
+                
+                <ul class="space-y-4 mb-10 flex-1">
+                    <li class="flex items-start gap-3 text-[15px] font-medium font-geist text-slate-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-slate-900"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Everything in Basic
+                    </li>
+                    <li class="flex items-start gap-3 text-[15px] font-medium font-geist text-slate-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-slate-900"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Unlimited invoices &amp; payments
+                    </li>
+                    <li class="flex items-start gap-3 text-[15px] font-medium font-geist text-slate-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-slate-900"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Expense tracking &amp; receipts
+                    </li>
+                    <li class="flex items-start gap-3 text-[15px] font-medium font-geist text-slate-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-slate-900"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Client portal access
+                    </li>
+                    <li class="flex items-start gap-3 text-[15px] font-medium font-geist text-slate-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-slate-900"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Advanced scheduling
+                    </li>
+                </ul>
+
+                 <button class="w-full py-4 rounded-full font-semibold text-[15px] shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all font-geist text-white hover:bg-black bg-indigo-950">
+                    Get started
+                </button>
+            </div>
+
+            <!-- Enterprise Plan -->
+            <div class="rounded-[32px] p-8 lg:p-10 shadow-sm border flex flex-col h-full hover:shadow-lg transition-shadow duration-300 bg-white border-slate-100">
+                <h3 class="text-lg font-semibold mb-2 font-geist text-slate-900">OnePro Enterprise</h3>
+                <div class="text-4xl md:text-5xl text-[#1A1A1A] tracking-tight mb-4 font-playfair font-medium">Flexible</div>
+                <p class="text-sm text-slate-500 font-medium mb-10 leading-relaxed font-geist">For agencies with custom needs and larger teams.</p>
+                
+                <ul class="space-y-4 mb-10 flex-1">
+                    <li class="flex items-start gap-3 text-[15px] font-medium font-geist text-slate-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-slate-900"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Everything in Premium
+                    </li>
+                    <li class="flex items-start gap-3 text-[15px] font-medium font-geist text-slate-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-slate-900"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Custom data import
+                    </li>
+                    <li class="flex items-start gap-3 text-[15px] font-medium font-geist text-slate-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-slate-900"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Dedicated account manager
+                    </li>
+                    <li class="flex items-start gap-3 text-[15px] font-medium font-geist text-slate-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-slate-900"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        API &amp; Webhooks
+                    </li>
+                    <li class="flex items-start gap-3 text-[15px] font-medium font-geist text-slate-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-slate-900"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Advanced permissions
+                    </li>
+                </ul>
+                
+                <button class="w-full py-4 rounded-full font-semibold text-[15px] transition-colors font-geist bg-slate-100 text-slate-900 hover:bg-slate-200">
+                    Contact sales
+                </button>
+            </div>
+        </div>
+
+        <!-- Logo Ticker Section -->
+        <div class="text-center hidden">
+            <p class="text-sm font-bold text-slate-500 tracking-wide font-geist mb-10">Trusted by 7,000+ top startups, agencies and studios</p>
+            
+            <div class="relative w-full overflow-hidden">
+                <!-- Fade Masks -->
+                <div class="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-[#F6F4F0] to-transparent z-10 pointer-events-none"></div>
+                <div class="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#F6F4F0] to-transparent z-10 pointer-events-none"></div>
+
+                <!-- Scrolling Container -->
+                <div class="flex animate-scroll-logos w-max items-center">
+                    
+                    <!-- Logo Set 1 -->
+                    <div class="flex items-center gap-12 md:gap-20 px-6 md:px-10 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+                        <!-- Logo 1: North -->
+                        <div class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="text-slate-800"><path d="M12 2L2 22h20L12 2zm0 4.8l6.4 12.8H5.6L12 6.8z"></path></svg>
+                            <span class="text-xl tracking-tight font-playfair font-medium text-slate-800">NORTH</span>
+                        </div>
+                        
+                        <!-- Logo 2: Vertex -->
+                        <div class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-slate-800"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v8M8 12h8"></path></svg>
+                            <span class="text-xl tracking-tight font-playfair font-medium text-slate-800">vertex</span>
+                        </div>
+
+                        <!-- Logo 3: Echo -->
+                        <div class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="text-slate-800"><path d="M2 12c0-5.5 4.5-10 10-10s10 4.5 10 10h-5c0-2.8-2.2-5-5-5s-5 2.2-5 5H2z"></path></svg>
+                            <span class="text-xl tracking-tight font-playfair font-medium text-slate-800">echo</span>
+                        </div>
+
+                        <!-- Logo 4: Orbit -->
+                        <div class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-slate-800"><path d="M12 2a10 10 0 1 0 10 10H12V2z" class=""></path></svg>
+                            <span class="text-xl tracking-tight font-playfair font-medium text-slate-800">ORBIT</span>
+                        </div>
+
+                        <!-- Logo 5: Layers -->
+                        <div class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="text-slate-800"><rect x="2" y="2" width="10" height="10" rx="2"></rect><rect x="12" y="12" width="10" height="10" rx="2" opacity="0.5"></rect></svg>
+                            <span class="text-xl tracking-tight font-playfair font-medium text-slate-800">Layers</span>
+                        </div>
+
+                        <!-- Logo 6: Bolt -->
+                        <div class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="text-slate-800"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" class=""></path></svg>
+                            <span class="text-xl tracking-tight font-playfair font-medium text-slate-800">Bolt</span>
+                        </div>
+                    </div>
+
+                    <!-- Logo Set 2 (Duplicate) -->
+                    <div class="flex items-center gap-12 md:gap-20 px-6 md:px-10 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+                        <!-- Logo 1: North -->
+                        <div class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="text-slate-800"><path d="M12 2L2 22h20L12 2zm0 4.8l6.4 12.8H5.6L12 6.8z"></path></svg>
+                            <span class="text-xl tracking-tight font-playfair font-medium text-slate-800">NORTH</span>
+                        </div>
+                        
+                        <!-- Logo 2: Vertex -->
+                        <div class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-slate-800"><circle cx="12" cy="12" r="9" class=""></circle><path d="M12 8v8M8 12h8"></path></svg>
+                            <span class="text-xl tracking-tight font-playfair font-medium text-slate-800">vertex</span>
+                        </div>
+
+                        <!-- Logo 3: Echo -->
+                        <div class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="text-slate-800"><path d="M2 12c0-5.5 4.5-10 10-10s10 4.5 10 10h-5c0-2.8-2.2-5-5-5s-5 2.2-5 5H2z"></path></svg>
+                            <span class="text-xl tracking-tight font-playfair font-medium text-slate-800">echo</span>
+                        </div>
+
+                        <!-- Logo 4: Orbit -->
+                        <div class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-slate-800"><path d="M12 2a10 10 0 1 0 10 10H12V2z"></path></svg>
+                            <span class="text-xl tracking-tight font-playfair font-medium text-slate-800">ORBIT</span>
+                        </div>
+
+                        <!-- Logo 5: Layers -->
+                        <div class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="text-slate-800"><rect x="2" y="2" width="10" height="10" rx="2"></rect><rect x="12" y="12" width="10" height="10" rx="2" opacity="0.5"></rect></svg>
+                            <span class="text-xl tracking-tight font-playfair font-medium text-slate-800">Layers</span>
+                        </div>
+
+                        <!-- Logo 6: Bolt -->
+                        <div class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="text-slate-800"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+                            <span class="text-xl tracking-tight font-playfair font-medium text-slate-800">Bolt</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div><footer class="z-10 w-full max-w-7xl mr-auto ml-auto pt-36 pr-6 pb-12 pl-6 relative">
+  <div class="md:p-12 lg:p-16 bg-blue-100 border-white/20 border rounded-[40px] pt-8 pr-8 pb-8 pl-8 shadow-sm">
+  <div class="flex flex-col lg:flex-row gap-12 lg:gap-24 mb-16 gap-x-12 gap-y-12 justify-between">
+
+  <!-- Brand Section -->
+  <div class="max-w-sm">
+    <div class="flex items-center gap-2 mb-6">
+      <div class="bg-blue-500 w-6 h-6 rounded-md"></div>
+      <span class="text-xl font-medium text-slate-900 tracking-tight font-playfair">OnePro</span>
+    </div>
+    <p class="text-[15px] leading-relaxed font-medium text-slate-600 font-geist">
+      Your favourite business management software. Built for early startup founders.
+    </p>
+    <div class="flex gap-x-4 gap-y-4 items-center justify-left hidden">
+      <a href="#" class="transition-colors hover:text-white">
+
+      </a><a href="#" class="transition-colors hover:text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 256 256" style="color: rgb(0, 0, 0); width: 18px; height: 18px;" class="w-[18px] h-[18px]" fill="currentColor" data-logos="linkedin-icon" data-icon-set="logos" data-icon-replaced="true" stroke-width="2">
+          <path fill="#000" d="M218.123 218.127h-37.931v-59.403c0-14.165-.253-32.4-19.728-32.4c-19.756 0-22.779 15.434-22.779 31.369v60.43h-37.93V95.967h36.413v16.694h.51a39.91 39.91 0 0 1 35.928-19.733c38.445 0 45.533 25.288 45.533 58.186zM56.955 79.27c-12.157.002-22.014-9.852-22.016-22.009s9.851-22.014 22.008-22.016c12.157-.003 22.014 9.851 22.016 22.008A22.013 22.013 0 0 1 56.955 79.27m18.966 138.858H37.95V95.967h37.97zM237.033.018H18.89C8.58-.098.125 8.161-.001 18.471v219.053c.122 10.315 8.576 18.582 18.89 18.474h218.144c10.336.128 18.823-8.139 18.966-18.474V18.454c-.147-10.33-8.635-18.588-18.966-18.453" class="">
+          </path>
+        </svg>
+      </a><a href="#" class="transition-colors hover:text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 251 256" class="w-[18px] h-[18px]" fill="currentColor" data-logos="x" data-icon-set="logos" data-icon-replaced="true" stroke-width="2" style="color: rgb(0, 0, 0); width: 18px; height: 18px">
+          <path d="M149.079 108.399L242.33 0h-22.098l-80.97 94.12L74.59 0H0l97.796 142.328L0 256h22.1l85.507-99.395L175.905 256h74.59L149.073 108.399zM118.81 143.58l-9.909-14.172l-78.84-112.773h33.943l63.625 91.011l9.909 14.173l82.705 118.3H186.3l-67.49-96.533z" class="">
+          </path>
+        </svg>
+      </a>
+      <a href="#" class="transition-colors hover:text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 256 256" style="width: 18px; height: 18px; color: rgb(255, 255, 255);" class="w-[18px] h-[18px]" fill="currentColor" data-logos="instagram-icon" data-icon-set="logos" data-icon-replaced="true" stroke-width="2">
+          <path fill="#000" d="M128 23.064c34.177 0 38.225.13 51.722.745c12.48.57 19.258 2.655 23.769 4.408c5.974 2.322 10.238 5.096 14.717 9.575s7.253 8.743 9.575 14.717c1.753 4.511 3.838 11.289 4.408 23.768c.615 13.498.745 17.546.745 51.723s-.13 38.226-.745 51.723c-.57 12.48-2.655 19.257-4.408 23.768c-2.322 5.974-5.096 10.239-9.575 14.718s-8.743 7.253-14.717 9.574c-4.511 1.753-11.289 3.839-23.769 4.408c-13.495.616-17.543.746-51.722.746s-38.228-.13-51.723-.746c-12.48-.57-19.257-2.655-23.768-4.408c-5.974-2.321-10.239-5.095-14.718-9.574c-4.479-4.48-7.253-8.744-9.574-14.718c-1.753-4.51-3.839-11.288-4.408-23.768c-.616-13.497-.746-17.545-.746-51.723s.13-38.225.746-51.722c.57-12.48 2.655-19.258 4.408-23.769c2.321-5.974 5.095-10.238 9.574-14.717c4.48-4.48 8.744-7.253 14.718-9.575c4.51-1.753 11.288-3.838 23.768-4.408c13.497-.615 17.545-.745 51.723-.745M128 0C93.237 0 88.878.147 75.226.77c-13.625.622-22.93 2.786-31.071 5.95c-8.418 3.271-15.556 7.648-22.672 14.764S9.991 35.738 6.72 44.155C3.555 52.297 1.392 61.602.77 75.226C.147 88.878 0 93.237 0 128s.147 39.122.77 52.774c.622 13.625 2.785 22.93 5.95 31.071c3.27 8.417 7.647 15.556 14.763 22.672s14.254 11.492 22.672 14.763c8.142 3.165 17.446 5.328 31.07 5.95c13.653.623 18.012.77 52.775.77s39.122-.147 52.774-.77c13.624-.622 22.929-2.785 31.07-5.95c8.418-3.27 15.556-7.647 22.672-14.763s11.493-14.254 14.764-22.672c3.164-8.142 5.328-17.446 5.95-31.07c.623-13.653.77-18.012.77-52.775s-.147-39.122-.77-52.774c-.622-13.624-2.786-22.929-5.95-31.07c-3.271-8.418-7.648-15.556-14.764-22.672S220.262 9.99 211.845 6.72c-8.142-3.164-17.447-5.328-31.071-5.95C167.122.147 162.763 0 128 0m0 62.27c-36.302 0-65.73 29.43-65.73 65.73s29.428 65.73 65.73 65.73c36.301 0 65.73-29.428 65.73-65.73c0-36.301-29.429-65.73-65.73-65.73m0 108.397c-23.564 0-42.667-19.103-42.667-42.667S104.436 85.333 128 85.333s42.667 19.103 42.667 42.667s-19.103 42.667-42.667 42.667m83.686-110.994c0 8.484-6.876 15.36-15.36 15.36s-15.36-6.876-15.36-15.36s6.877-15.36 15.36-15.36s15.36 6.877 15.36 15.36" class="">
+          </path>
+        </svg>
+      </a><a href="#" class="transition-colors hover:text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="w-[18px] h-[18px]" stroke-width="2" data-icon-replaced="true" style="color: rgb(0, 0, 0); width: 18px; height: 18px;">
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" class=""></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Links Section -->
+  <div class="flex gap-12 sm:gap-24 gap-x-12 gap-y-12">
+  <!-- Product Column -->
+  <div class="flex flex-col gap-4 gap-x-4 gap-y-4">
+    <h4 class="uppercase text-xs font-semibold text-neutral-950 tracking-widest font-geist mb-1">Product</h4>
+    <a href="#" class="text-[15px] hover:text-[#1A1A1A] transition-colors text-slate-600 font-geist">Features</a>
+    <a href="#" class="text-[15px] hover:text-[#1A1A1A] transition-colors text-slate-600 font-geist">About</a>
+
+    
+  </div>
+
+  <!-- Information Column -->
+  <div class="flex flex-col gap-4">
+    <h4 class="uppercase text-xs font-semibold text-neutral-950 tracking-widest font-geist mb-1">Information</h4>
+    <a href="#" class="text-[15px] hover:text-[#1A1A1A] transition-colors text-slate-600 font-geist">Contact</a>
+    
+    <a href="#" class="text-[15px] hover:text-[#1A1A1A] transition-colors text-slate-600 font-geist">Privacy</a>
+    
+  </div>
+</div>
+</div>
+
+  <!-- Divider -->
+  <div class="h-px bg-slate-900/5 w-full mb-8"></div>
+
+  <!-- Bottom Section -->
+  <div class="flex flex-col md:flex-row md:items-center gap-4 text-[13px] text-slate-500 font-sans gap-x-4 gap-y-4 items-start justify-between">
+    <div class="font-geist">© 2026 ProLeap</div>
+    
+  </div>
+</div>
+</footer>
+</section>
+
+    <!-- Initialize Icons -->
+    <script class="">
+        lucide.createIcons();
+    </script>
+
+</body></html>
