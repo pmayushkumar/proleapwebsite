@@ -133,7 +133,7 @@
     <!-- Navigation -->
     <header
       id="main-header"
-      class="sticky top-0 z-50 w-full transition-colors duration-300 ease-in-out"
+      class="sticky top-0 z-50 w-full transition-all duration-300 ease-in-out"
     >
       <nav
         class="flex animate-fade-in md:px-12 w-full max-w-7xl mr-auto ml-auto pt-6 pr-6 pb-6 pl-6 items-center justify-between"
@@ -326,7 +326,6 @@
 
         <div
           class="relative flex flex-col items-center"
-          style="min-height: 200vh"
         >
           <!-- Step 1 -->
           <div class="sticky top-32 mb-12 w-full">
@@ -2941,12 +2940,13 @@
       (function () {
         const header = document.getElementById("main-header");
         const scrollThreshold = 50;
+        const frostClass = "bg-white/40 backdrop-blur-md border-b border-white/20";
 
         function updateHeaderBackground() {
           if (window.scrollY > scrollThreshold) {
-            header.classList.add("bg-white");
+            header.classList.add(...frostClass.split(' '));
           } else {
-            header.classList.remove("bg-white");
+            header.classList.remove(...frostClass.split(' '));
           }
         }
 
