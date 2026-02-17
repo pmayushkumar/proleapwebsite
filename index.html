@@ -230,11 +230,11 @@
         <div
           class="animate-fade-in text-center max-w-3xl mr-auto mb-16 ml-auto"
         >
-          <span
+          <!-- <span
             class="uppercase block text-xs font-bold text-slate-500 tracking-widest font-geist mb-4"
           >
             OUR MISSION
-          </span>
+          </span> -->
           <h2
             class="md:text-5xl text-3xl font-medium text-neutral-950 tracking-tight font-playfair mb-6"
           >
@@ -248,63 +248,135 @@
           </p>
         </div>
 
-        <!-- Cards Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <!-- Project Management Card -->
+        <!-- Problem/Value Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <!-- Card 1 -->
           <div
-            class="hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group overflow-hidden bg-neutral-50 border-white/60 border rounded-[32px] pt-8 pr-8 pb-8 pl-8 relative shadow-lg backdrop-blur-md"
+            class="group h-full flex flex-col bg-white border border-white/60 rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300"
           >
+            <!-- Problem (Top) -->
             <div
-              class="absolute inset-0 bg-gradient-to-br via-transparent to-transparent opacity-50 pointer-events-none from-white"
-            ></div>
-            <div
-              class="flex group-hover:scale-110 transition-transform duration-300 text-slate-900 bg-blue-100 w-14 h-14 border-white border rounded-2xl mb-6 shadow-sm items-center justify-center"
-            ></div>
-            <h3 class="text-xl font-medium text-neutral-950 font-playfair mb-3">
-              Receiving ambiguous feedback?
-            </h3>
-            <p class="text-[15px] leading-relaxed text-slate-600 font-geist">
-              Improve your executive presence, storytelling, influence
-            </p>
+              class="p-8 bg-red-50/50 border-b border-red-100/50 relative min-h-[320px] flex flex-col"
+            >
+              <h3
+                class="text-xl md:text-2xl font-medium text-neutral-950 font-playfair leading-tight mb-2"
+              >
+                Receiving ambiguous feedback like improve executive presence,
+                influence, visibility? 😰
+              </h3>
+            </div>
+
+            <!-- Value Prop (Bottom) -->
+            <div class="p-8 bg-white flex-1 flex flex-col justify-end relative">
+              <!-- Decorative BG -->
+              <div
+                class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-50/50 to-transparent rounded-bl-full opacity-60 pointer-events-none"
+              ></div>
+
+              <div
+                class="inline-flex w-fit items-center gap-1.5 rounded-full bg-blue-50 border border-blue-100 px-3 py-1 text-[11px] font-bold text-blue-600 font-geist mb-4 uppercase tracking-wide"
+              >
+                <iconify-icon
+                  icon="solar:stars-minimalistic-linear"
+                  width="14"
+                  stroke-width="2"
+                  class="mr-0.5"
+                ></iconify-icon>
+                ProLeap Value
+              </div>
+              <p
+                class="text-[17px] leading-relaxed text-slate-600 font-geist font-medium"
+              >
+                ProLeap converts ambiguity to clarity with fact grounded
+                observations and tracking.
+              </p>
+            </div>
           </div>
 
-          <!-- Invoicing Card -->
+          <!-- Card 2 -->
           <div
-            class="hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group overflow-hidden bg-neutral-50 border-white/60 border rounded-[32px] pt-8 pr-8 pb-8 pl-8 relative shadow-lg backdrop-blur-md"
+            class="group h-full flex flex-col bg-white border border-white/60 rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300"
           >
+            <!-- Problem (Top) -->
             <div
-              class="absolute inset-0 bg-gradient-to-br via-transparent to-transparent opacity-50 pointer-events-none from-white"
-            ></div>
+              class="p-8 bg-red-50/50 border-b border-red-100/50 relative min-h-[320px] flex flex-col"
+            >
+              <h3
+                class="text-xl md:text-2xl font-medium text-neutral-950 font-playfair leading-tight mb-2"
+              >
+                Can’t afford a high-caliber coach who charge $500 per hour on
+                average?
+              </h3>
+            </div>
 
-            <div
-              class="flex group-hover:scale-110 transition-transform duration-300 text-slate-900 bg-blue-100 w-14 h-14 border-white border rounded-2xl mb-6 shadow-sm items-center justify-center"
-            ></div>
-            <h3 class="text-xl font-medium text-neutral-950 font-playfair mb-3">
-              Coaching is too expensive?
-            </h3>
-            <p class="text-[15px] leading-relaxed text-slate-600 font-geist">
-              High-caliber professional coach charges ~$500 per hour
-            </p>
+            <!-- Value Prop (Bottom) -->
+            <div class="p-8 bg-white flex-1 flex flex-col justify-end relative">
+              <!-- Decorative BG -->
+              <div
+                class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-50/50 to-transparent rounded-bl-full opacity-60 pointer-events-none"
+              ></div>
+
+              <div
+                class="inline-flex w-fit items-center gap-1.5 rounded-full bg-blue-50 border border-blue-100 px-3 py-1 text-[11px] font-bold text-blue-600 font-geist mb-4 uppercase tracking-wide"
+              >
+                <iconify-icon
+                  icon="solar:stars-minimalistic-linear"
+                  width="14"
+                  stroke-width="2"
+                  class="mr-0.5"
+                ></iconify-icon>
+                ProLeap Value
+              </div>
+              <p
+                class="text-[17px] leading-relaxed text-slate-600 font-geist font-medium"
+              >
+                ProLeap is a world-class coach trained on frameworks of best
+                coaches, yet affordable.
+              </p>
+            </div>
           </div>
 
-          <!-- Client CRM Card -->
+          <!-- Card 3 -->
           <div
-            class="hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group overflow-hidden bg-neutral-50 border-white/60 border rounded-[32px] pt-8 pr-8 pb-8 pl-8 relative shadow-lg backdrop-blur-md"
+            class="group h-full flex flex-col bg-white border border-white/60 rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300"
           >
+            <!-- Problem (Top) -->
             <div
-              class="absolute inset-0 bg-gradient-to-br via-transparent to-transparent opacity-50 pointer-events-none from-white"
-            ></div>
+              class="p-8 bg-red-50/50 border-b border-red-100/50 relative min-h-[320px] flex flex-col"
+            >
+              <h3
+                class="text-xl md:text-2xl font-medium text-neutral-950 font-playfair leading-tight mb-2"
+              >
+                Fed up of theory from leadership books which are difficult to
+                contexualize?
+              </h3>
+            </div>
 
-            <div
-              class="flex group-hover:scale-110 transition-transform duration-300 text-slate-900 bg-blue-100 w-14 h-14 border-white border rounded-2xl mb-6 shadow-sm items-center justify-center"
-            ></div>
-            <h3 class="text-xl font-medium text-neutral-950 font-playfair mb-3">
-              Fed up of theory?
-            </h3>
-            <p class="text-[15px] leading-relaxed text-slate-600 font-geist">
-              Leadership books &amp; frameworks are difficult to operationalize
-              in our context
-            </p>
+            <!-- Value Prop (Bottom) -->
+            <div class="p-8 bg-white flex-1 flex flex-col justify-end relative">
+              <!-- Decorative BG -->
+              <div
+                class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-50/50 to-transparent rounded-bl-full opacity-60 pointer-events-none"
+              ></div>
+
+              <div
+                class="inline-flex w-fit items-center gap-1.5 rounded-full bg-blue-50 border border-blue-100 px-3 py-1 text-[11px] font-bold text-blue-600 font-geist mb-4 uppercase tracking-wide"
+              >
+                <iconify-icon
+                  icon="solar:stars-minimalistic-linear"
+                  width="14"
+                  stroke-width="2"
+                  class="mr-0.5"
+                ></iconify-icon>
+                ProLeap Value
+              </div>
+              <p
+                class="text-[17px] leading-relaxed text-slate-600 font-geist font-medium"
+              >
+                ProLeap offers insights with precision, which are highly
+                relevant to your context, delivered to you automagically!
+              </p>
+            </div>
           </div>
         </div>
       </section>
