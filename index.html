@@ -192,8 +192,8 @@
           <p
             class="md:text-[19px] leading-relaxed text-lg font-medium text-slate-600 font-geist max-w-2xl mr-auto mb-10 ml-auto"
           >
-            ProLeap coach shadows your meetings and shares data based insights
-            on your behavioral blind spots.
+            ProLeap discovers your blind spots & negative patterns by shadowing
+            your meetings, and converts them into an actionable roadmap.
           </p>
 
           <div
@@ -324,9 +324,7 @@
           </h2>
         </div>
 
-        <div
-          class="relative flex flex-col items-center"
-        >
+        <div class="relative flex flex-col items-center">
           <!-- Step 1 -->
           <div class="sticky top-32 mb-12 w-full">
             <div
@@ -566,7 +564,8 @@
                       </span>
                     </div>
                     <p class="text-sm text-slate-600 text-center mb-3">
-                      You spoke 30% less today, giving your team more space.
+                      You are using 'being nice' as a crutch for avoiding the
+                      discomfort of honesty. Instead try....
                     </p>
                     <div
                       class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden"
@@ -1377,10 +1376,10 @@
           </div>
           <div class="text-center">
             <div class="text-lg font-bold text-neutral-950 font-geist">
-              Testimonial Author
+              Ankur Gupta
             </div>
             <div class="text-sm font-medium text-slate-500 font-geist">
-              Title, Organisation
+              Director,Product Marketing
             </div>
           </div>
         </div>
@@ -2940,13 +2939,14 @@
       (function () {
         const header = document.getElementById("main-header");
         const scrollThreshold = 50;
-        const frostClass = "bg-white/40 backdrop-blur-md border-b border-white/20";
+        const frostClass =
+          "bg-white/40 backdrop-blur-md border-b border-white/20";
 
         function updateHeaderBackground() {
           if (window.scrollY > scrollThreshold) {
-            header.classList.add(...frostClass.split(' '));
+            header.classList.add(...frostClass.split(" "));
           } else {
-            header.classList.remove(...frostClass.split(' '));
+            header.classList.remove(...frostClass.split(" "));
           }
         }
 
