@@ -3417,7 +3417,7 @@
         var tl = gsap.timeline({ delay: 0.8 });
 
         /* Phase 1 — messages appear one-by-one with word-by-word typing */
-        var WORDS_PER_SEC = 18;
+        var WORDS_PER_SEC = 12;
         messages.forEach(function (msg, i) {
           var words = (msg.getAttribute('data-text') || '').split(/\s+/);
           var textEl = msg.querySelector('.msg-text');
@@ -3425,9 +3425,9 @@
 
           /* Show the bubble with smooth entrance */
           tl.to(msg, {
-            opacity: 1, y: 0, duration: 0.35, ease: 'power3.out',
+            opacity: 1, y: 0, duration: 0.45, ease: 'power3.out',
             onStart: function () { if (textEl) textEl.textContent = ''; }
-          }, i === 0 ? '+=0.15' : '+=0.25');
+          }, i === 0 ? '+=0.2' : '+=0.4');
 
           /* Type words into it with smooth interpolation */
           if (textEl && words.length) {
