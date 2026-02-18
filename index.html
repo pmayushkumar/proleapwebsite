@@ -933,97 +933,89 @@
           </p>
         </div>
 
-        <!-- Problem/Value Section -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <!-- Card 1 -->
+        <!-- Problem/Value Section — Editorial Bento Layout -->
+        <div class="flex flex-col gap-5">
+
+          <!-- Row 1: Wide feature card -->
           <div
-            class="group h-full flex flex-col bg-white border border-white/60 rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300"
+            class="group relative overflow-hidden rounded-[28px] bg-gradient-to-br from-blue-50/80 via-slate-50 to-white border border-slate-100/80 p-10 md:p-14 flex flex-col md:flex-row md:items-end md:justify-between gap-8 transition-shadow duration-300 hover:shadow-xl"
           >
-            <!-- Problem (Top) -->
-            <div
-              class="p-8 bg-red-50/50 border-b border-red-100/50 relative min-h-[320px] flex flex-col"
-            >
+
+            <div class="relative z-10 max-w-lg">
+              <p
+                class="text-xs font-bold uppercase tracking-widest text-blue-400 font-geist mb-4"
+              >
+                Blind Spots
+              </p>
               <h3
-                class="text-xl md:text-2xl font-medium text-neutral-950 font-playfair leading-tight mb-2"
+                class="text-3xl md:text-4xl font-medium text-neutral-900 font-playfair leading-snug"
               >
                 Fix career blind spots
               </h3>
             </div>
-
-            <!-- Value Prop (Bottom) -->
-            <div class="p-8 bg-white flex-1 flex flex-col justify-end relative">
-              <!-- Decorative BG -->
-              <div
-                class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-50/50 to-transparent rounded-bl-full opacity-60 pointer-events-none"
-              ></div>
-              <p
-                class="text-[17px] leading-relaxed text-slate-600 font-geist font-medium"
-              >
-                Get personalized, actionable insights within your first week of
-                meetings.
-              </p>
-            </div>
-          </div>
-
-          <!-- Card 2 -->
-          <div
-            class="group h-full flex flex-col bg-white border border-white/60 rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300"
-          >
-            <!-- Problem (Top) -->
-            <div
-              class="p-8 bg-red-50/50 border-b border-red-100/50 relative min-h-[320px] flex flex-col"
+            <p
+              class="relative z-10 text-[17px] leading-relaxed text-slate-500 font-geist md:max-w-xs"
             >
-              <h3
-                class="text-xl md:text-2xl font-medium text-neutral-950 font-playfair leading-tight mb-2"
-              >
-                Quantify “soft skills”
-              </h3>
-            </div>
-
-            <!-- Value Prop (Bottom) -->
-            <div class="p-8 bg-white flex-1 flex flex-col justify-end relative">
-              <!-- Decorative BG -->
-              <div
-                class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-50/50 to-transparent rounded-bl-full opacity-60 pointer-events-none"
-              ></div>
-              <p
-                class="text-[17px] leading-relaxed text-slate-600 font-geist font-medium"
-              >
-                Track your leadership growth with unbiased, data-driven weekly
-                metrics.
-              </p>
-            </div>
+              Get personalized, actionable insights within your first week of
+              meetings.
+            </p>
           </div>
 
-          <!-- Card 3 -->
-          <div
-            class="group h-full flex flex-col bg-white border border-white/60 rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300"
-          >
-            <!-- Problem (Top) -->
+          <!-- Row 2: Two equal cards side by side -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+            <!-- Card 2 -->
             <div
-              class="p-8 bg-red-50/50 border-b border-red-100/50 relative min-h-[320px] flex flex-col"
+              class="group relative overflow-hidden rounded-[28px] bg-gradient-to-br from-violet-50/70 via-slate-50 to-white border border-slate-100/80 p-10 flex flex-col justify-between min-h-[260px] transition-shadow duration-300 hover:shadow-xl"
             >
-              <h3
-                class="text-xl md:text-2xl font-medium text-neutral-950 font-playfair leading-tight mb-2"
-              >
-                Growth on Autopilot
-              </h3>
+
+              <div class="relative z-10">
+                <p
+                  class="text-xs font-bold uppercase tracking-widest text-violet-400 font-geist mb-4"
+                >
+                  Metrics
+                </p>
+                <h3
+                  class="text-2xl md:text-3xl font-medium text-neutral-900 font-playfair leading-snug mb-5"
+                >
+                  Quantify "soft skills"
+                </h3>
+                <p
+                  class="text-[16px] leading-relaxed text-slate-500 font-geist"
+                >
+                  Track your leadership growth with unbiased, data-driven weekly
+                  metrics.
+                </p>
+              </div>
             </div>
 
-            <!-- Value Prop (Bottom) -->
-            <div class="p-8 bg-white flex-1 flex flex-col justify-end relative">
-              <!-- Decorative BG -->
-              <div
-                class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-50/50 to-transparent rounded-bl-full opacity-60 pointer-events-none"
-              ></div>
-              <p
-                class="text-[17px] leading-relaxed text-slate-600 font-geist font-medium"
-              >
-                Sharpen your skills silently during your workday; no homework
-                required.
-              </p>
+            <!-- Card 3 -->
+            <div
+              class="group relative overflow-hidden rounded-[28px] bg-gradient-to-br from-emerald-50/60 via-slate-50 to-white border border-slate-100/80 p-10 flex flex-col justify-between min-h-[260px] transition-shadow duration-300 hover:shadow-xl"
+            >
+
+              <div class="relative z-10">
+                <p
+                  class="text-xs font-bold uppercase tracking-widest text-emerald-500 font-geist mb-4"
+                >
+                  Autopilot
+                </p>
+                <h3
+                  class="text-2xl md:text-3xl font-medium text-neutral-900 font-playfair leading-snug mb-5"
+                >
+                  Growth on Autopilot
+                </h3>
+                <p
+                  class="text-[16px] leading-relaxed text-slate-500 font-geist"
+                >
+                  Sharpen your skills silently during your workday; no homework
+                  required.
+                </p>
+              </div>
             </div>
+
           </div>
+
         </div>
       </section>
       <section
