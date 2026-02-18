@@ -381,65 +381,95 @@
               </div>
 
               <!-- Messages -->
-              <div id="messages-container" class="flex-1 px-6 py-5 space-y-5 overflow-y-auto relative scroll-smooth">
+              <div id="messages-container" class="flex-1 px-5 py-5 space-y-4 overflow-y-auto relative scroll-smooth">
 
-                <!-- PM 1 -->
-                <div class="msg" style="opacity:0;transform:translateY(12px)">
-                  <div class="flex items-start gap-3">
+                <!-- Product Manager 1 -->
+                <div class="msg msg-left" style="opacity:0;transform:translateY(8px)" data-text="Hey, for the Reserve launch in London, we need to increase the driver 'buffer' from 15 to 20 minutes to account for traffic. Should be a simple config change, right?">
+                  <div class="flex items-start gap-2.5 max-w-[88%]">
                     <div class="w-7 h-7 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span class="text-[10px] font-bold text-amber-700">PM</span>
+                      <span class="text-[8px] font-bold text-amber-700">PM</span>
                     </div>
-                    <p class="text-[13px] text-neutral-600 leading-relaxed font-geist">"Hey, for the Reserve launch in London, we need to increase the driver 'buffer' from 15 to 20 minutes to account for traffic. Should be a simple config change, right?"</p>
+                    <div>
+                      <span class="text-[10px] font-semibold text-amber-700 font-geist block mb-1">Product Manager</span>
+                      <div class="bg-amber-50/70 rounded-2xl rounded-tl-md px-3.5 py-2.5 border border-amber-100/50">
+                        <p class="msg-text text-[12.5px] text-neutral-600 leading-relaxed font-geist"></p>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <!-- Eng 1 -->
-                <div class="msg" style="opacity:0;transform:translateY(12px)">
-                  <div class="flex items-start gap-3">
+                <!-- Engineer 1 -->
+                <div class="msg msg-right" style="opacity:0;transform:translateY(8px)" data-text="Not exactly. The ReservationService doesn't just pull a static integer. It's dependent on the ETA-Predictor which uses a weighted moving average of the last five pings.">
+                  <div class="flex items-start gap-2.5 max-w-[88%] ml-auto flex-row-reverse">
                     <div class="w-7 h-7 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span class="text-[10px] font-bold text-blue-700">Eng</span>
+                      <span class="text-[8px] font-bold text-blue-700">Eng</span>
                     </div>
-                    <p class="text-[13px] text-neutral-600 leading-relaxed font-geist">"Not exactly. The ReservationService doesn't just pull a static integer. It's dependent on the ETA-Predictor which uses a weighted moving average of the last five pings."</p>
+                    <div class="flex flex-col items-end">
+                      <span class="text-[10px] font-semibold text-blue-700 font-geist block mb-1">Engineer</span>
+                      <div class="bg-blue-50/70 rounded-2xl rounded-tr-md px-3.5 py-2.5 border border-blue-100/50">
+                        <p class="msg-text text-[12.5px] text-neutral-600 leading-relaxed font-geist"></p>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <!-- PM 2 -->
-                <div class="msg" style="opacity:0;transform:translateY(12px)">
-                  <div class="flex items-start gap-3">
+                <!-- Product Manager 2 -->
+                <div class="msg msg-left" style="opacity:0;transform:translateY(8px)" data-text="Okay... but can't we just add a 5-minute offset to whatever that service returns?">
+                  <div class="flex items-start gap-2.5 max-w-[88%]">
                     <div class="w-7 h-7 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span class="text-[10px] font-bold text-amber-700">PM</span>
+                      <span class="text-[8px] font-bold text-amber-700">PM</span>
                     </div>
-                    <p class="text-[13px] text-neutral-600 leading-relaxed font-geist">"Okay... but can't we just add a 5-minute offset to whatever that service returns?"</p>
+                    <div>
+                      <span class="text-[10px] font-semibold text-amber-700 font-geist block mb-1">Product Manager</span>
+                      <div class="bg-amber-50/70 rounded-2xl rounded-tl-md px-3.5 py-2.5 border border-amber-100/50">
+                        <p class="msg-text text-[12.5px] text-neutral-600 leading-relaxed font-geist"></p>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <!-- Eng 2 -->
-                <div class="msg" style="opacity:0;transform:translateY(12px)">
-                  <div class="flex items-start gap-3">
+                <!-- Engineer 2 -->
+                <div class="msg msg-right" style="opacity:0;transform:translateY(8px)" data-text="If we do that, we risk a race condition in the Matching-Engine. If the offset is applied after the geo-hash lookup, the driver might be 'claimed' by a real-time request before the Reserve lock is placed.">
+                  <div class="flex items-start gap-2.5 max-w-[88%] ml-auto flex-row-reverse">
                     <div class="w-7 h-7 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span class="text-[10px] font-bold text-blue-700">Eng</span>
+                      <span class="text-[8px] font-bold text-blue-700">Eng</span>
                     </div>
-                    <p class="text-[13px] text-neutral-600 leading-relaxed font-geist">"If we do that, we risk a race condition in the Matching-Engine. If the offset is applied after the geo-hash lookup, the driver might be 'claimed' by a real-time request before the Reserve lock is placed."</p>
+                    <div class="flex flex-col items-end">
+                      <span class="text-[10px] font-semibold text-blue-700 font-geist block mb-1">Engineer</span>
+                      <div class="bg-blue-50/70 rounded-2xl rounded-tr-md px-3.5 py-2.5 border border-blue-100/50">
+                        <p class="msg-text text-[12.5px] text-neutral-600 leading-relaxed font-geist"></p>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <!-- PM 3 -->
-                <div class="msg" style="opacity:0;transform:translateY(12px)">
-                  <div class="flex items-start gap-3">
+                <!-- Product Manager 3 -->
+                <div class="msg msg-left" style="opacity:0;transform:translateY(8px)" data-text="I'm not sure I follow. I just want the driver to start heading there 5 minutes earlier.">
+                  <div class="flex items-start gap-2.5 max-w-[88%]">
                     <div class="w-7 h-7 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span class="text-[10px] font-bold text-amber-700">PM</span>
+                      <span class="text-[8px] font-bold text-amber-700">PM</span>
                     </div>
-                    <p class="text-[13px] text-neutral-600 leading-relaxed font-geist">"I'm not sure I follow. I just want the driver to start heading there 5 minutes earlier."</p>
+                    <div>
+                      <span class="text-[10px] font-semibold text-amber-700 font-geist block mb-1">Product Manager</span>
+                      <div class="bg-amber-50/70 rounded-2xl rounded-tl-md px-3.5 py-2.5 border border-amber-100/50">
+                        <p class="msg-text text-[12.5px] text-neutral-600 leading-relaxed font-geist"></p>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <!-- Eng 3 -->
-                <div class="msg" style="opacity:0;transform:translateY(12px)">
-                  <div class="flex items-start gap-3">
+                <!-- Engineer 3 -->
+                <div class="msg msg-right" style="opacity:0;transform:translateY(8px)" data-text="Right, but the Dispatch-Cron runs on a 60-second heartbeat. If we shift the buffer, we have to re-index the Redis cache for all pending reservations in that cell, or we'll get stale TTLs.">
+                  <div class="flex items-start gap-2.5 max-w-[88%] ml-auto flex-row-reverse">
                     <div class="w-7 h-7 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span class="text-[10px] font-bold text-blue-700">Eng</span>
+                      <span class="text-[8px] font-bold text-blue-700">Eng</span>
                     </div>
-                    <p class="text-[13px] text-neutral-600 leading-relaxed font-geist">"Right, but the Dispatch-Cron runs on a 60-second heartbeat. If we shift the buffer, we have to re-index the Redis cache for all pending reservations in that cell, or we'll get stale TTLs."</p>
+                    <div class="flex flex-col items-end">
+                      <span class="text-[10px] font-semibold text-blue-700 font-geist block mb-1">Engineer</span>
+                      <div class="bg-blue-50/70 rounded-2xl rounded-tr-md px-3.5 py-2.5 border border-blue-100/50">
+                        <p class="msg-text text-[12.5px] text-neutral-600 leading-relaxed font-geist"></p>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -3373,13 +3403,18 @@
         if (!transcriptPanel || !feedbackPanel) return;
 
         /* ── Reset ── */
-        gsap.set(messages,         { opacity: 0, y: 12 });
+        gsap.set(messages,         { opacity: 0, y: 8 });
         gsap.set(scanOverlay,      { opacity: 0 });
         gsap.set(scanLine,         { top: -80 });
         gsap.set(feedbackItems,    { opacity: 0, y: 8 });
         gsap.set(replayBtn,        { opacity: 0 });
         messagesContainer.scrollTop = 0;
         transcriptPanel.classList.remove('scanning-glow');
+        /* Clear typed text */
+        messages.forEach(function (msg) {
+          var t = msg.querySelector('.msg-text');
+          if (t) t.textContent = '';
+        });
 
         if (mobile) {
           /* Mobile: reset panels as tabbed */
@@ -3405,14 +3440,33 @@
         /* ── Build timeline ── */
         var tl = gsap.timeline({ delay: 0.8 });
 
-        /* Phase 1 — messages appear one-by-one */
+        /* Phase 1 — messages appear one-by-one with word-by-word typing */
+        var WORDS_PER_SEC = 28;
         messages.forEach(function (msg, i) {
+          var words = (msg.getAttribute('data-text') || '').split(/\s+/);
+          var textEl = msg.querySelector('.msg-text');
+          var typeDuration = words.length / WORDS_PER_SEC;
+
+          /* Show the bubble */
           tl.to(msg, {
-            opacity: 1, y: 0, duration: 0.2, ease: 'power2.out',
-            onComplete: function () {
-              messagesContainer.scrollTo({ top: messagesContainer.scrollHeight, behavior: 'smooth' });
-            }
-          }, i === 0 ? '+=0.1' : '+=0.22');
+            opacity: 1, y: 0, duration: 0.15, ease: 'power2.out',
+            onStart: function () { if (textEl) textEl.textContent = ''; }
+          }, i === 0 ? '+=0.1' : '+=0.12');
+
+          /* Type words into it */
+          if (textEl && words.length) {
+            tl.to({ wordIndex: 0 }, {
+              wordIndex: words.length,
+              duration: typeDuration,
+              ease: 'none',
+              roundProps: 'wordIndex',
+              onUpdate: function () {
+                var idx = Math.round(this.targets()[0].wordIndex);
+                textEl.textContent = words.slice(0, idx).join(' ');
+                messagesContainer.scrollTo({ top: messagesContainer.scrollHeight, behavior: 'smooth' });
+              }
+            }, '-=0.02');
+          }
         });
 
         /* Pause before scan */
@@ -3453,8 +3507,8 @@
           /* Phase 4 — feedback items appear line by line */
           feedbackItems.forEach(function (item, i) {
             tl.to(item, {
-              opacity: 1, y: 0, duration: 0.18, ease: 'power2.out'
-            }, i === 0 ? '+=0.12' : '+=0.08');
+              opacity: 1, y: 0, duration: 0.3, ease: 'power2.out'
+            }, i === 0 ? '+=0.18' : '+=0.14');
           });
 
         } else {
@@ -3476,8 +3530,8 @@
           /* Phase 4 — feedback items appear line by line */
           feedbackItems.forEach(function (item, i) {
             tl.to(item, {
-              opacity: 1, y: 0, duration: 0.18, ease: 'power2.out'
-            }, i === 0 ? '+=0.12' : '+=0.08');
+              opacity: 1, y: 0, duration: 0.3, ease: 'power2.out'
+            }, i === 0 ? '+=0.18' : '+=0.14');
           });
         }
 
