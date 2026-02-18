@@ -68,16 +68,16 @@
         background: linear-gradient(
           to bottom,
           transparent 0%,
-          rgba(59,130,246,0.03) 15%,
-          rgba(59,130,246,0.12) 40%,
-          rgba(59,130,246,0.24) 50%,
-          rgba(59,130,246,0.12) 60%,
-          rgba(59,130,246,0.03) 85%,
+          rgba(59, 130, 246, 0.03) 15%,
+          rgba(59, 130, 246, 0.12) 40%,
+          rgba(59, 130, 246, 0.24) 50%,
+          rgba(59, 130, 246, 0.12) 60%,
+          rgba(59, 130, 246, 0.03) 85%,
           transparent 100%
         );
       }
       #scan-line::after {
-        content: '';
+        content: "";
         position: absolute;
         left: 0;
         right: 0;
@@ -87,20 +87,23 @@
         background: linear-gradient(
           90deg,
           transparent 0%,
-          rgba(59,130,246,0.3) 10%,
-          rgba(59,130,246,0.7) 50%,
-          rgba(59,130,246,0.3) 90%,
+          rgba(59, 130, 246, 0.3) 10%,
+          rgba(59, 130, 246, 0.7) 50%,
+          rgba(59, 130, 246, 0.3) 90%,
           transparent 100%
         );
-        box-shadow: 0 0 15px 3px rgba(59,130,246,0.15);
+        box-shadow: 0 0 15px 3px rgba(59, 130, 246, 0.15);
       }
 
       /* Scanning glow on panel */
       .scanning-glow {
-        border-color: rgba(59,130,246,0.25) !important;
-        box-shadow: 0 0 40px -10px rgba(59,130,246,0.2),
-                    0 1px 3px rgba(0,0,0,0.05) !important;
-        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        border-color: rgba(59, 130, 246, 0.25) !important;
+        box-shadow:
+          0 0 40px -10px rgba(59, 130, 246, 0.2),
+          0 1px 3px rgba(0, 0, 0, 0.05) !important;
+        transition:
+          border-color 0.3s ease,
+          box-shadow 0.3s ease;
       }
 
       /* Thin scrollbars for animation panels */
@@ -114,7 +117,7 @@
       }
       #messages-container::-webkit-scrollbar-thumb,
       #feedback-content::-webkit-scrollbar-thumb {
-        background: rgba(0,0,0,0.08);
+        background: rgba(0, 0, 0, 0.08);
         border-radius: 10px;
       }
 
@@ -171,7 +174,9 @@
           border: none;
           border-bottom: 2px solid transparent;
           cursor: pointer;
-          transition: color 0.25s ease, border-color 0.25s ease;
+          transition:
+            color 0.25s ease,
+            border-color 0.25s ease;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -342,208 +347,565 @@
 
         <!-- Hero Graphic Animation -->
         <div class="relative w-full max-w-[1300px]">
-        <div
-          class="overflow-hidden flex flex-col md:flex-row animate-slide-up bg-neutral-50 w-full h-[800px] border-white/60 border rounded-[32px] relative shadow-2xl"
-          style="
-            animation-delay: 0.3s;
-            box-shadow:
-              0 50px 100px -20px rgba(50, 50, 93, 0.15),
-              0 30px 60px -30px rgba(0, 0, 0, 0.1);
-          "
-        >
-          <!-- Mobile Tab Bar -->
-          <div id="hero-tabs" class="bg-white border-b border-neutral-100 px-2 pt-2 font-geist">
-            <div class="flex justify-center gap-8">
-              <button id="tab-transcript" class="hero-tab-btn active" onclick="switchHeroTab('transcript')">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
-                Transcript
-              </button>
-              <button id="tab-feedback" class="hero-tab-btn" onclick="switchHeroTab('feedback')" disabled style="display:none">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
-                Coach
-              </button>
+          <div
+            class="overflow-hidden flex flex-col md:flex-row animate-slide-up bg-neutral-50 w-full h-[800px] border-white/60 border rounded-[32px] relative shadow-2xl"
+            style="
+              animation-delay: 0.3s;
+              box-shadow:
+                0 50px 100px -20px rgba(50, 50, 93, 0.15),
+                0 30px 60px -30px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <!-- Mobile Tab Bar -->
+            <div
+              id="hero-tabs"
+              class="bg-white border-b border-neutral-100 px-2 pt-2 font-geist"
+            >
+              <div class="flex justify-center gap-8">
+                <button
+                  id="tab-transcript"
+                  class="hero-tab-btn active"
+                  onclick="switchHeroTab('transcript')"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"
+                    />
+                    <rect x="2" y="6" width="14" height="12" rx="2" />
+                  </svg>
+                  Transcript
+                </button>
+                <button
+                  id="tab-feedback"
+                  class="hero-tab-btn"
+                  onclick="switchHeroTab('feedback')"
+                  disabled
+                  style="display: none"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"
+                    />
+                  </svg>
+                  Coach
+                </button>
+              </div>
+            </div>
+
+            <!-- Animation Wrapper -->
+            <div
+              id="hero-animation"
+              class="w-full h-full flex items-center justify-center p-8 gap-5 relative"
+            >
+              <!-- ═══════════ Transcript Panel ═══════════ -->
+              <div
+                id="transcript-panel"
+                class="bg-white rounded-2xl border border-neutral-200/60 shadow-sm flex flex-col overflow-hidden"
+                style="width: 65%; height: 100%; flex-shrink: 1"
+              >
+                <!-- Header -->
+                <div
+                  class="flex items-center gap-3 px-6 py-4 border-b border-neutral-100"
+                >
+                  <div
+                    class="w-9 h-9 rounded-xl bg-rose-50 flex items-center justify-center text-rose-400"
+                  >
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"
+                      />
+                      <rect x="2" y="6" width="14" height="12" rx="2" />
+                    </svg>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <div
+                      class="text-[13px] font-semibold text-neutral-800 font-geist"
+                    >
+                      Meeting Transcript
+                    </div>
+                    <div class="text-[11px] text-neutral-400 font-geist">
+                      Sprint Planning · Reserve Feature
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center gap-1.5 bg-neutral-50 border border-neutral-100 px-2.5 py-1 rounded-full"
+                  >
+                    <div
+                      class="w-1.5 h-1.5 rounded-full bg-rose-400 animate-pulse"
+                    ></div>
+                    <span
+                      class="text-[10px] font-semibold text-neutral-400 font-geist tracking-wide"
+                      >REC</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Messages -->
+                <div
+                  id="messages-container"
+                  class="flex-1 px-5 py-5 space-y-4 overflow-y-auto relative scroll-smooth"
+                >
+                  <!-- Sophia 1 -->
+                  <div
+                    class="msg msg-left"
+                    style="opacity: 0; transform: translateY(8px)"
+                    data-text="Hey, for the launch in London, we need to increase the driver 'buffer' from 15 to 20 minutes to account for traffic. Should be a simple config change, right? 🤔"
+                  >
+                    <div class="max-w-[88%]">
+                      <div>
+                        <span
+                          class="text-[10px] font-semibold text-amber-700 font-geist block mb-1"
+                          >Sophia, Product Manager
+                          <span class="text-amber-500">@Uber</span></span
+                        >
+                        <div
+                          class="bg-amber-50/70 rounded-2xl rounded-tl-md px-3.5 py-2.5 border border-amber-100/50"
+                        >
+                          <p
+                            class="msg-text text-[12.5px] text-neutral-600 leading-relaxed font-geist"
+                          ></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Rob 1 -->
+                  <div
+                    class="msg msg-right"
+                    style="opacity: 0; transform: translateY(8px)"
+                    data-text="Not exactly. The ReservationService doesn't just pull a static integer. It's dependent on the ETA-Predictor which uses a weighted moving average of the last five pings."
+                  >
+                    <div class="max-w-[88%] ml-auto">
+                      <div class="flex flex-col items-end">
+                        <span
+                          class="text-[10px] font-semibold text-blue-700 font-geist block mb-1"
+                          >Rob, Senior Developer
+                          <span class="text-blue-500">@Uber</span></span
+                        >
+                        <div
+                          class="bg-blue-50/70 rounded-2xl rounded-tr-md px-3.5 py-2.5 border border-blue-100/50"
+                        >
+                          <p
+                            class="msg-text text-[12.5px] text-neutral-600 leading-relaxed font-geist"
+                          ></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Sophia 2 -->
+                  <div
+                    class="msg msg-left"
+                    style="opacity: 0; transform: translateY(8px)"
+                    data-text="Okay... but can't we just add a 5-minute offset to whatever that service returns? 🥺"
+                  >
+                    <div class="max-w-[88%]">
+                      <div>
+                        <span
+                          class="text-[10px] font-semibold text-amber-700 font-geist block mb-1"
+                          >Sophia</span
+                        >
+                        <div
+                          class="bg-amber-50/70 rounded-2xl rounded-tl-md px-3.5 py-2.5 border border-amber-100/50"
+                        >
+                          <p
+                            class="msg-text text-[12.5px] text-neutral-600 leading-relaxed font-geist"
+                          ></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Rob 2 -->
+                  <div
+                    class="msg msg-right"
+                    style="opacity: 0; transform: translateY(8px)"
+                    data-text="If we do that, we risk a race condition in the Matching-Engine. If the offset is applied after the geo-hash lookup, the driver might be 'claimed' by a real-time request before the Reserve lock is placed."
+                  >
+                    <div class="max-w-[88%] ml-auto">
+                      <div class="flex flex-col items-end">
+                        <span
+                          class="text-[10px] font-semibold text-blue-700 font-geist block mb-1"
+                          >Rob</span
+                        >
+                        <div
+                          class="bg-blue-50/70 rounded-2xl rounded-tr-md px-3.5 py-2.5 border border-blue-100/50"
+                        >
+                          <p
+                            class="msg-text text-[12.5px] text-neutral-600 leading-relaxed font-geist"
+                          ></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Sophia 3 -->
+                  <div
+                    class="msg msg-left"
+                    style="opacity: 0; transform: translateY(8px)"
+                    data-text="I'm not sure I follow. I just want the driver to start heading there 5 minutes earlier."
+                  >
+                    <div class="max-w-[88%]">
+                      <div>
+                        <span
+                          class="text-[10px] font-semibold text-amber-700 font-geist block mb-1"
+                          >Sophia</span
+                        >
+                        <div
+                          class="bg-amber-50/70 rounded-2xl rounded-tl-md px-3.5 py-2.5 border border-amber-100/50"
+                        >
+                          <p
+                            class="msg-text text-[12.5px] text-neutral-600 leading-relaxed font-geist"
+                          ></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Scan Overlay -->
+                  <div
+                    id="scan-overlay"
+                    class="absolute inset-0 pointer-events-none"
+                    style="opacity: 0"
+                  >
+                    <div
+                      id="scan-line"
+                      class="absolute left-0 right-0 h-20"
+                      style="top: -80px"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ═══════════ Feedback Panel (initially collapsed) ═══════════ -->
+              <div
+                id="feedback-panel"
+                class="bg-white rounded-2xl border border-neutral-200/60 shadow-sm flex flex-col overflow-hidden"
+                style="
+                  width: 0;
+                  height: 100%;
+                  flex-shrink: 1;
+                  opacity: 0;
+                  overflow: hidden;
+                "
+              >
+                <!-- Header -->
+                <div
+                  class="flex items-center gap-3 px-6 py-4 border-b border-neutral-100"
+                  style="min-width: 0"
+                >
+                  <div
+                    class="w-9 h-9 rounded-xl bg-blue-50 flex items-center justify-center text-blue-500"
+                  >
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"
+                      />
+                      <path d="M5 3v4" />
+                      <path d="M19 17v4" />
+                      <path d="M3 5h4" />
+                      <path d="M17 19h4" />
+                    </svg>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <div
+                      class="text-[13px] font-semibold text-neutral-800 font-geist"
+                    >
+                      ProLeap Coach
+                    </div>
+                    <div class="text-[11px] text-neutral-400 font-geist">
+                      AI-powered feedback
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center gap-1.5 bg-blue-50 border border-blue-100 px-2.5 py-1 rounded-full"
+                  >
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="text-blue-500"
+                    >
+                      <path
+                        d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"
+                      />
+                    </svg>
+                    <span
+                      class="text-[10px] font-semibold text-blue-500 font-geist tracking-wide"
+                      >AI ANALYSIS</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Feedback Content -->
+                <div
+                  id="feedback-content"
+                  class="flex-1 px-6 py-5 space-y-6 overflow-y-auto"
+                  style="min-width: 0"
+                >
+                  <!-- Observation -->
+                  <div class="fb-section">
+                    <div
+                      class="fb-item flex items-center gap-2.5 mb-3"
+                      style="opacity: 0; transform: translateY(8px)"
+                    >
+                      <div
+                        class="w-7 h-7 rounded-lg bg-orange-50 flex items-center justify-center text-orange-400"
+                      >
+                        <svg
+                          width="15"
+                          height="15"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path
+                            d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </div>
+                      <h4
+                        class="text-[13px] font-bold text-neutral-800 font-geist uppercase tracking-wider"
+                      >
+                        Observation
+                      </h4>
+                    </div>
+                    <div class="space-y-3 pl-9">
+                      <div
+                        class="fb-item flex items-start gap-2"
+                        style="opacity: 0; transform: translateY(8px)"
+                      >
+                        <span class="text-neutral-300 mt-1 text-[8px]"
+                          >&#9679;</span
+                        >
+                        <p
+                          class="text-[12.5px] text-neutral-600 leading-relaxed font-geist"
+                        >
+                          The PM left feeling stupid and blocked, rather than
+                          informed and supported. You successfully proved the
+                          system is complex, but you
+                          <span class="font-semibold text-neutral-700"
+                            >failed to prove you are a partner</span
+                          >
+                          in solving the problem.
+                        </p>
+                      </div>
+                      <div
+                        class="fb-item flex items-start gap-2"
+                        style="opacity: 0; transform: translateY(8px)"
+                      >
+                        <span class="text-neutral-300 mt-1 text-[8px]"
+                          >&#9679;</span
+                        >
+                        <p
+                          class="text-[12.5px] text-neutral-600 leading-relaxed font-geist"
+                        >
+                          You rejected solutions based on technical constraints
+                          without offering a viable alternative path until
+                          forced. The PM felt like they were
+                          <span class="font-semibold text-neutral-700"
+                            >fighting the engineering team</span
+                          >
+                          to get a feature shipped, rather than collaborating on
+                          how to ship it safely.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Blindspot -->
+                  <div class="fb-section">
+                    <div
+                      class="fb-item flex items-center gap-2.5 mb-3"
+                      style="opacity: 0; transform: translateY(8px)"
+                    >
+                      <div
+                        class="w-7 h-7 rounded-lg bg-violet-50 flex items-center justify-center text-violet-400"
+                      >
+                        <svg
+                          width="15"
+                          height="15"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <circle cx="12" cy="12" r="10" />
+                          <circle cx="12" cy="12" r="6" />
+                          <circle cx="12" cy="12" r="2" />
+                        </svg>
+                      </div>
+                      <h4
+                        class="text-[13px] font-bold text-neutral-800 font-geist uppercase tracking-wider"
+                      >
+                        Blindspot
+                      </h4>
+                    </div>
+                    <div class="pl-9">
+                      <p
+                        class="fb-item text-[12.5px] text-neutral-600 leading-relaxed font-geist"
+                        style="opacity: 0; transform: translateY(8px)"
+                      >
+                        You may also have been using
+                        <span class="font-semibold text-neutral-700"
+                          >"Accuracy First"</span
+                        >
+                        logic &mdash; believing that being technically precise
+                        was more important than being directionally helpful.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Shift Needed -->
+                  <div class="fb-section">
+                    <div
+                      class="fb-item flex items-center gap-2.5 mb-3"
+                      style="opacity: 0; transform: translateY(8px)"
+                    >
+                      <div
+                        class="w-7 h-7 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-400"
+                      >
+                        <svg
+                          width="15"
+                          height="15"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path d="m16 3 4 4-4 4" />
+                          <path d="M20 7H4" />
+                          <path d="m8 21-4-4 4-4" />
+                          <path d="M4 17h16" />
+                        </svg>
+                      </div>
+                      <h4
+                        class="text-[13px] font-bold text-neutral-800 font-geist uppercase tracking-wider"
+                      >
+                        Shift Needed
+                      </h4>
+                    </div>
+                    <div class="pl-9 space-y-3">
+                      <p
+                        class="fb-item text-[12.5px] text-neutral-600 leading-relaxed font-geist"
+                        style="opacity: 0; transform: translateY(8px)"
+                      >
+                        Shift from
+                        <span class="font-semibold text-neutral-800"
+                          >"The Gatekeeper"</span
+                        >
+                        to
+                        <span class="font-semibold text-blue-500"
+                          >"The Strategic Partner."</span
+                        >
+                      </p>
+                      <div class="space-y-2 mt-2">
+                        <div
+                          class="fb-item flex items-start gap-2.5 bg-red-50/70 rounded-xl px-3.5 py-2.5 border border-red-100/50"
+                          style="opacity: 0; transform: translateY(8px)"
+                        >
+                          <span
+                            class="text-red-400 text-sm mt-0.5 flex-shrink-0"
+                            >&times;</span
+                          >
+                          <p
+                            class="text-[12px] text-neutral-500 font-geist italic leading-relaxed"
+                          >
+                            "No, that breaks the Thrift definition."
+                          </p>
+                        </div>
+                        <div
+                          class="fb-item flex items-start gap-2.5 bg-emerald-50/70 rounded-xl px-3.5 py-2.5 border border-emerald-100/50"
+                          style="opacity: 0; transform: translateY(8px)"
+                        >
+                          <span
+                            class="text-emerald-500 text-sm mt-0.5 flex-shrink-0"
+                            >&#10003;</span
+                          >
+                          <p
+                            class="text-[12px] text-neutral-500 font-geist italic leading-relaxed"
+                          >
+                            "To get you that 20-minute buffer without crashing
+                            the app, I need 3 days to update the core logic. Is
+                            that timeline acceptable for Friday?"
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Animation Wrapper -->
-          <div id="hero-animation" class="w-full h-full flex items-center justify-center p-8 gap-5 relative">
-
-            <!-- ═══════════ Transcript Panel ═══════════ -->
-            <div id="transcript-panel" class="bg-white rounded-2xl border border-neutral-200/60 shadow-sm flex flex-col overflow-hidden" style="width:65%;height:100%;flex-shrink:1;">
-
-              <!-- Header -->
-              <div class="flex items-center gap-3 px-6 py-4 border-b border-neutral-100">
-                <div class="w-9 h-9 rounded-xl bg-rose-50 flex items-center justify-center text-rose-400">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
-                </div>
-                <div class="flex-1 min-w-0">
-                  <div class="text-[13px] font-semibold text-neutral-800 font-geist">Meeting Transcript</div>
-                  <div class="text-[11px] text-neutral-400 font-geist">Sprint Planning · Reserve Feature</div>
-                </div>
-                <div class="flex items-center gap-1.5 bg-neutral-50 border border-neutral-100 px-2.5 py-1 rounded-full">
-                  <div class="w-1.5 h-1.5 rounded-full bg-rose-400 animate-pulse"></div>
-                  <span class="text-[10px] font-semibold text-neutral-400 font-geist tracking-wide">REC</span>
-                </div>
-              </div>
-
-              <!-- Messages -->
-              <div id="messages-container" class="flex-1 px-5 py-5 space-y-4 overflow-y-auto relative scroll-smooth">
-
-                <!-- Sophia 1 -->
-                <div class="msg msg-left" style="opacity:0;transform:translateY(8px)" data-text="Hey, for the launch in London, we need to increase the driver 'buffer' from 15 to 20 minutes to account for traffic. Should be a simple config change, right? 🤔">
-                  <div class="max-w-[88%]">
-                    <div>
-                      <span class="text-[10px] font-semibold text-amber-700 font-geist block mb-1">Sophia, Product Manager <span class="text-amber-500">@Uber</span></span>
-                      <div class="bg-amber-50/70 rounded-2xl rounded-tl-md px-3.5 py-2.5 border border-amber-100/50">
-                        <p class="msg-text text-[12.5px] text-neutral-600 leading-relaxed font-geist"></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Rob 1 -->
-                <div class="msg msg-right" style="opacity:0;transform:translateY(8px)" data-text="Not exactly. The ReservationService doesn't just pull a static integer. It's dependent on the ETA-Predictor which uses a weighted moving average of the last five pings.">
-                  <div class="max-w-[88%] ml-auto">
-                    <div class="flex flex-col items-end">
-                      <span class="text-[10px] font-semibold text-blue-700 font-geist block mb-1">Rob, Senior Developer <span class="text-blue-500">@Uber</span></span>
-                      <div class="bg-blue-50/70 rounded-2xl rounded-tr-md px-3.5 py-2.5 border border-blue-100/50">
-                        <p class="msg-text text-[12.5px] text-neutral-600 leading-relaxed font-geist"></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Sophia 2 -->
-                <div class="msg msg-left" style="opacity:0;transform:translateY(8px)" data-text="Okay... but can't we just add a 5-minute offset to whatever that service returns? 🥺">
-                  <div class="max-w-[88%]">
-                    <div>
-                      <span class="text-[10px] font-semibold text-amber-700 font-geist block mb-1">Sophia</span>
-                      <div class="bg-amber-50/70 rounded-2xl rounded-tl-md px-3.5 py-2.5 border border-amber-100/50">
-                        <p class="msg-text text-[12.5px] text-neutral-600 leading-relaxed font-geist"></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Rob 2 -->
-                <div class="msg msg-right" style="opacity:0;transform:translateY(8px)" data-text="If we do that, we risk a race condition in the Matching-Engine. If the offset is applied after the geo-hash lookup, the driver might be 'claimed' by a real-time request before the Reserve lock is placed.">
-                  <div class="max-w-[88%] ml-auto">
-                    <div class="flex flex-col items-end">
-                      <span class="text-[10px] font-semibold text-blue-700 font-geist block mb-1">Rob</span>
-                      <div class="bg-blue-50/70 rounded-2xl rounded-tr-md px-3.5 py-2.5 border border-blue-100/50">
-                        <p class="msg-text text-[12.5px] text-neutral-600 leading-relaxed font-geist"></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Sophia 3 -->
-                <div class="msg msg-left" style="opacity:0;transform:translateY(8px)" data-text="I'm not sure I follow. I just want the driver to start heading there 5 minutes earlier.">
-                  <div class="max-w-[88%]">
-                    <div>
-                      <span class="text-[10px] font-semibold text-amber-700 font-geist block mb-1">Sophia</span>
-                      <div class="bg-amber-50/70 rounded-2xl rounded-tl-md px-3.5 py-2.5 border border-amber-100/50">
-                        <p class="msg-text text-[12.5px] text-neutral-600 leading-relaxed font-geist"></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Scan Overlay -->
-                <div id="scan-overlay" class="absolute inset-0 pointer-events-none" style="opacity:0">
-                  <div id="scan-line" class="absolute left-0 right-0 h-20" style="top:-80px"></div>
-                </div>
-              </div>
-            </div>
-
-            <!-- ═══════════ Feedback Panel (initially collapsed) ═══════════ -->
-            <div id="feedback-panel" class="bg-white rounded-2xl border border-neutral-200/60 shadow-sm flex flex-col overflow-hidden" style="width:0;height:100%;flex-shrink:1;opacity:0;overflow:hidden;">
-
-              <!-- Header -->
-              <div class="flex items-center gap-3 px-6 py-4 border-b border-neutral-100" style="min-width:0">
-                <div class="w-9 h-9 rounded-xl bg-blue-50 flex items-center justify-center text-blue-500">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
-                </div>
-                <div class="flex-1 min-w-0">
-                  <div class="text-[13px] font-semibold text-neutral-800 font-geist">ProLeap Coach</div>
-                  <div class="text-[11px] text-neutral-400 font-geist">AI-powered feedback</div>
-                </div>
-                <div class="flex items-center gap-1.5 bg-blue-50 border border-blue-100 px-2.5 py-1 rounded-full">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-blue-500"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
-                  <span class="text-[10px] font-semibold text-blue-500 font-geist tracking-wide">AI ANALYSIS</span>
-                </div>
-              </div>
-
-              <!-- Feedback Content -->
-              <div id="feedback-content" class="flex-1 px-6 py-5 space-y-6 overflow-y-auto" style="min-width:0">
-
-                <!-- Observation -->
-                <div class="fb-section">
-                  <div class="fb-item flex items-center gap-2.5 mb-3" style="opacity:0;transform:translateY(8px)">
-                    <div class="w-7 h-7 rounded-lg bg-orange-50 flex items-center justify-center text-orange-400">
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-                    </div>
-                    <h4 class="text-[13px] font-bold text-neutral-800 font-geist uppercase tracking-wider">Observation</h4>
-                  </div>
-                  <div class="space-y-3 pl-9">
-                    <div class="fb-item flex items-start gap-2" style="opacity:0;transform:translateY(8px)">
-                      <span class="text-neutral-300 mt-1 text-[8px]">&#9679;</span>
-                      <p class="text-[12.5px] text-neutral-600 leading-relaxed font-geist">The PM left feeling stupid and blocked, rather than informed and supported. You successfully proved the system is complex, but you <span class="font-semibold text-neutral-700">failed to prove you are a partner</span> in solving the problem.</p>
-                    </div>
-                    <div class="fb-item flex items-start gap-2" style="opacity:0;transform:translateY(8px)">
-                      <span class="text-neutral-300 mt-1 text-[8px]">&#9679;</span>
-                      <p class="text-[12.5px] text-neutral-600 leading-relaxed font-geist">You rejected solutions based on technical constraints without offering a viable alternative path until forced. The PM felt like they were <span class="font-semibold text-neutral-700">fighting the engineering team</span> to get a feature shipped, rather than collaborating on how to ship it safely.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Blindspot -->
-                <div class="fb-section">
-                  <div class="fb-item flex items-center gap-2.5 mb-3" style="opacity:0;transform:translateY(8px)">
-                    <div class="w-7 h-7 rounded-lg bg-violet-50 flex items-center justify-center text-violet-400">
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-                    </div>
-                    <h4 class="text-[13px] font-bold text-neutral-800 font-geist uppercase tracking-wider">Blindspot</h4>
-                  </div>
-                  <div class="pl-9">
-                    <p class="fb-item text-[12.5px] text-neutral-600 leading-relaxed font-geist" style="opacity:0;transform:translateY(8px)">You may also have been using <span class="font-semibold text-neutral-700">"Accuracy First"</span> logic &mdash; believing that being technically precise was more important than being directionally helpful.</p>
-                  </div>
-                </div>
-
-                <!-- Shift Needed -->
-                <div class="fb-section">
-                  <div class="fb-item flex items-center gap-2.5 mb-3" style="opacity:0;transform:translateY(8px)">
-                    <div class="w-7 h-7 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-400">
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg>
-                    </div>
-                    <h4 class="text-[13px] font-bold text-neutral-800 font-geist uppercase tracking-wider">Shift Needed</h4>
-                  </div>
-                  <div class="pl-9 space-y-3">
-                    <p class="fb-item text-[12.5px] text-neutral-600 leading-relaxed font-geist" style="opacity:0;transform:translateY(8px)">Shift from <span class="font-semibold text-neutral-800">"The Gatekeeper"</span> to <span class="font-semibold text-blue-500">"The Strategic Partner."</span></p>
-                    <div class="space-y-2 mt-2">
-                      <div class="fb-item flex items-start gap-2.5 bg-red-50/70 rounded-xl px-3.5 py-2.5 border border-red-100/50" style="opacity:0;transform:translateY(8px)">
-                        <span class="text-red-400 text-sm mt-0.5 flex-shrink-0">&times;</span>
-                        <p class="text-[12px] text-neutral-500 font-geist italic leading-relaxed">"No, that breaks the Thrift definition."</p>
-                      </div>
-                      <div class="fb-item flex items-start gap-2.5 bg-emerald-50/70 rounded-xl px-3.5 py-2.5 border border-emerald-100/50" style="opacity:0;transform:translateY(8px)">
-                        <span class="text-emerald-500 text-sm mt-0.5 flex-shrink-0">&#10003;</span>
-                        <p class="text-[12px] text-neutral-500 font-geist italic leading-relaxed">"To get you that 20-minute buffer without crashing the app, I need 3 days to update the core logic. Is that timeline acceptable for Friday?"</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- ═══════════ Replay Button (inside wrapper, outside overflow container) ═══════════ -->
-        <button id="replay-btn" onclick="replayAnimation()" class="absolute bottom-4 right-4 z-20 flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-neutral-200 rounded-full px-4 py-2.5 text-[12px] font-medium text-neutral-400 hover:text-blue-500 hover:border-blue-200 hover:shadow-md transition-all duration-300 shadow-sm cursor-pointer font-geist group" style="opacity:0">
-          <svg class="transition-transform duration-500 group-hover:-rotate-180" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
-          Replay
-        </button>
+          <!-- ═══════════ Replay Button (inside wrapper, outside overflow container) ═══════════ -->
+          <button
+            id="replay-btn"
+            onclick="replayAnimation()"
+            class="absolute bottom-4 right-4 z-20 flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-neutral-200 rounded-full px-4 py-2.5 text-[12px] font-medium text-neutral-400 hover:text-blue-500 hover:border-blue-200 hover:shadow-md transition-all duration-300 shadow-sm cursor-pointer font-geist group"
+            style="opacity: 0"
+          >
+            <svg
+              class="transition-transform duration-500 group-hover:-rotate-180"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+              <path d="M3 3v5h5" />
+            </svg>
+            Replay
+          </button>
         </div>
       </main>
       <section
@@ -561,7 +923,7 @@
           <h2
             class="md:text-5xl text-3xl font-medium text-neutral-950 tracking-tight font-playfair mb-6"
           >
-            Democratizing Professional Excellence
+            Why ProLeap?
           </h2>
           <p class="text-lg font-medium text-slate-600 font-geist">
             Most professional growth stalls because of "soft skills". ProLeap is
@@ -584,8 +946,7 @@
               <h3
                 class="text-xl md:text-2xl font-medium text-neutral-950 font-playfair leading-tight mb-2"
               >
-                Receiving ambiguous feedback like improve executive presence,
-                influence, visibility? 😰
+                Fix career blind spots
               </h3>
             </div>
 
@@ -595,23 +956,11 @@
               <div
                 class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-50/50 to-transparent rounded-bl-full opacity-60 pointer-events-none"
               ></div>
-
-              <div
-                class="inline-flex w-fit items-center gap-1.5 rounded-full bg-blue-50 border border-blue-100 px-3 py-1 text-[11px] font-bold text-blue-600 font-geist mb-4 uppercase tracking-wide"
-              >
-                <iconify-icon
-                  icon="solar:stars-minimalistic-linear"
-                  width="14"
-                  stroke-width="2"
-                  class="mr-0.5"
-                ></iconify-icon>
-                ProLeap Value
-              </div>
               <p
                 class="text-[17px] leading-relaxed text-slate-600 font-geist font-medium"
               >
-                ProLeap converts ambiguity to clarity with fact grounded
-                observations and tracking.
+                Get personalized, actionable insights within your first week of
+                meetings.
               </p>
             </div>
           </div>
@@ -627,8 +976,7 @@
               <h3
                 class="text-xl md:text-2xl font-medium text-neutral-950 font-playfair leading-tight mb-2"
               >
-                Can’t afford a high-caliber coach who charge $500 per hour on
-                average?
+                Quantify “soft skills”
               </h3>
             </div>
 
@@ -638,23 +986,11 @@
               <div
                 class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-50/50 to-transparent rounded-bl-full opacity-60 pointer-events-none"
               ></div>
-
-              <div
-                class="inline-flex w-fit items-center gap-1.5 rounded-full bg-blue-50 border border-blue-100 px-3 py-1 text-[11px] font-bold text-blue-600 font-geist mb-4 uppercase tracking-wide"
-              >
-                <iconify-icon
-                  icon="solar:stars-minimalistic-linear"
-                  width="14"
-                  stroke-width="2"
-                  class="mr-0.5"
-                ></iconify-icon>
-                ProLeap Value
-              </div>
               <p
                 class="text-[17px] leading-relaxed text-slate-600 font-geist font-medium"
               >
-                ProLeap is a world-class coach trained on frameworks of best
-                coaches, yet affordable.
+                Track your leadership growth with unbiased, data-driven weekly
+                metrics.
               </p>
             </div>
           </div>
@@ -670,8 +1006,7 @@
               <h3
                 class="text-xl md:text-2xl font-medium text-neutral-950 font-playfair leading-tight mb-2"
               >
-                Fed up of theory from leadership books which are difficult to
-                contexualize?
+                Growth on Autopilot
               </h3>
             </div>
 
@@ -681,23 +1016,11 @@
               <div
                 class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-50/50 to-transparent rounded-bl-full opacity-60 pointer-events-none"
               ></div>
-
-              <div
-                class="inline-flex w-fit items-center gap-1.5 rounded-full bg-blue-50 border border-blue-100 px-3 py-1 text-[11px] font-bold text-blue-600 font-geist mb-4 uppercase tracking-wide"
-              >
-                <iconify-icon
-                  icon="solar:stars-minimalistic-linear"
-                  width="14"
-                  stroke-width="2"
-                  class="mr-0.5"
-                ></iconify-icon>
-                ProLeap Value
-              </div>
               <p
                 class="text-[17px] leading-relaxed text-slate-600 font-geist font-medium"
               >
-                ProLeap offers insights with precision, which are highly
-                relevant to your context, delivered to you automagically!
+                Sharpen your skills silently during your workday; no homework
+                required.
               </p>
             </div>
           </div>
@@ -3331,181 +3654,249 @@
 
     <!-- Hero Animation Script -->
     <script>
-    (function () {
-      let heroTimeline = null;
+      (function () {
+        let heroTimeline = null;
 
-      function isMobile() {
-        return window.innerWidth < 768;
-      }
-
-      /* ── Tab switching (mobile only) ── */
-      window.switchHeroTab = function (tab) {
-        var transcriptPanel = document.getElementById('transcript-panel');
-        var feedbackPanel   = document.getElementById('feedback-panel');
-        var tabTranscript   = document.getElementById('tab-transcript');
-        var tabFeedback     = document.getElementById('tab-feedback');
-        if (!transcriptPanel || !feedbackPanel) return;
-
-        if (tab === 'transcript') {
-          transcriptPanel.classList.remove('mobile-hidden');
-          feedbackPanel.classList.add('mobile-hidden');
-          tabTranscript.classList.add('active');
-          tabFeedback.classList.remove('active');
-        } else {
-          transcriptPanel.classList.add('mobile-hidden');
-          feedbackPanel.classList.remove('mobile-hidden');
-          tabTranscript.classList.remove('active');
-          tabFeedback.classList.add('active');
-        }
-      };
-
-      function runHeroAnimation() {
-        if (heroTimeline) { heroTimeline.kill(); }
-
-        var mobile = isMobile();
-
-        var messages          = document.querySelectorAll('.msg');
-        var scanOverlay       = document.getElementById('scan-overlay');
-        var scanLine          = document.getElementById('scan-line');
-        var transcriptPanel   = document.getElementById('transcript-panel');
-        var feedbackPanel     = document.getElementById('feedback-panel');
-        var feedbackSections  = document.querySelectorAll('.fb-section');
-        var feedbackItems     = document.querySelectorAll('.fb-item');
-        var replayBtn         = document.getElementById('replay-btn');
-        var messagesContainer = document.getElementById('messages-container');
-        var tabTranscript     = document.getElementById('tab-transcript');
-        var tabFeedback       = document.getElementById('tab-feedback');
-
-        if (!transcriptPanel || !feedbackPanel) return;
-
-        /* ── Reset ── */
-        gsap.set(messages,         { opacity: 0, y: 8 });
-        gsap.set(scanOverlay,      { opacity: 0 });
-        gsap.set(scanLine,         { top: -80 });
-        gsap.set(feedbackItems,    { opacity: 0, y: 8 });
-        gsap.set(replayBtn,        { opacity: 0 });
-        messagesContainer.scrollTop = 0;
-        transcriptPanel.classList.remove('scanning-glow');
-        /* Pre-fill text (hidden by opacity:0) */
-        messages.forEach(function (msg) {
-          var t = msg.querySelector('.msg-text');
-          if (t) t.textContent = msg.getAttribute('data-text') || '';
-        });
-
-        if (mobile) {
-          /* Mobile: reset panels as tabbed */
-          transcriptPanel.classList.remove('mobile-hidden');
-          feedbackPanel.classList.add('mobile-hidden');
-          gsap.set(transcriptPanel,  { clearProps: 'width,borderColor,boxShadow' });
-          gsap.set(feedbackPanel,    { clearProps: 'width,opacity' });
-          feedbackPanel.style.opacity = '1';
-          feedbackPanel.style.width   = '100%';
-          /* Reset tabs — hide Coach tab entirely */
-          tabTranscript.classList.add('active');
-          tabFeedback.classList.remove('active');
-          tabFeedback.disabled = true;
-          tabFeedback.style.display = 'none';
-        } else {
-          /* Desktop: reset panels as side-by-side */
-          transcriptPanel.classList.remove('mobile-hidden');
-          feedbackPanel.classList.remove('mobile-hidden');
-          gsap.set(transcriptPanel, { width: '65%', borderColor: 'rgba(229,229,229,0.6)', boxShadow: '0 1px 2px 0 rgba(0,0,0,0.05)' });
-          gsap.set(feedbackPanel,   { width: 0, opacity: 0 });
+        function isMobile() {
+          return window.innerWidth < 768;
         }
 
-        /* ── Build timeline ── */
-        var tl = gsap.timeline({ delay: 0.8 });
+        /* ── Tab switching (mobile only) ── */
+        window.switchHeroTab = function (tab) {
+          var transcriptPanel = document.getElementById("transcript-panel");
+          var feedbackPanel = document.getElementById("feedback-panel");
+          var tabTranscript = document.getElementById("tab-transcript");
+          var tabFeedback = document.getElementById("tab-feedback");
+          if (!transcriptPanel || !feedbackPanel) return;
 
-        /* Phase 1 — all messages appear together in one smooth fade */
-        tl.to(messages, {
-          opacity: 1, y: 0, duration: 0.6, ease: 'power2.out',
-          onComplete: function () {
-            messagesContainer.scrollTo({ top: messagesContainer.scrollHeight, behavior: 'smooth' });
+          if (tab === "transcript") {
+            transcriptPanel.classList.remove("mobile-hidden");
+            feedbackPanel.classList.add("mobile-hidden");
+            tabTranscript.classList.add("active");
+            tabFeedback.classList.remove("active");
+          } else {
+            transcriptPanel.classList.add("mobile-hidden");
+            feedbackPanel.classList.remove("mobile-hidden");
+            tabTranscript.classList.remove("active");
+            tabFeedback.classList.add("active");
           }
-        }, '+=0.2');
+        };
 
-        /* Pause before scan */
-        tl.to({}, { duration: 0.3 });
+        function runHeroAnimation() {
+          if (heroTimeline) {
+            heroTimeline.kill();
+          }
 
-        /* Phase 2 — scan effect (2 sweeps) */
-        tl.to(scanOverlay, { opacity: 1, duration: 0.15 })
-          .call(function () { transcriptPanel.classList.add('scanning-glow'); });
+          var mobile = isMobile();
 
-        for (var i = 0; i < 3; i++) {
-          tl.fromTo(scanLine,
-            { top: -80 },
-            { top: function () { return messagesContainer.scrollHeight + 20; },
-              duration: 0.45, ease: 'none' },
-            i === 0 ? '+=0.05' : '+=0.1'
+          var messages = document.querySelectorAll(".msg");
+          var scanOverlay = document.getElementById("scan-overlay");
+          var scanLine = document.getElementById("scan-line");
+          var transcriptPanel = document.getElementById("transcript-panel");
+          var feedbackPanel = document.getElementById("feedback-panel");
+          var feedbackSections = document.querySelectorAll(".fb-section");
+          var feedbackItems = document.querySelectorAll(".fb-item");
+          var replayBtn = document.getElementById("replay-btn");
+          var messagesContainer = document.getElementById("messages-container");
+          var tabTranscript = document.getElementById("tab-transcript");
+          var tabFeedback = document.getElementById("tab-feedback");
+
+          if (!transcriptPanel || !feedbackPanel) return;
+
+          /* ── Reset ── */
+          gsap.set(messages, { opacity: 0, y: 8 });
+          gsap.set(scanOverlay, { opacity: 0 });
+          gsap.set(scanLine, { top: -80 });
+          gsap.set(feedbackItems, { opacity: 0, y: 8 });
+          gsap.set(replayBtn, { opacity: 0 });
+          messagesContainer.scrollTop = 0;
+          transcriptPanel.classList.remove("scanning-glow");
+          /* Pre-fill text (hidden by opacity:0) */
+          messages.forEach(function (msg) {
+            var t = msg.querySelector(".msg-text");
+            if (t) t.textContent = msg.getAttribute("data-text") || "";
+          });
+
+          if (mobile) {
+            /* Mobile: reset panels as tabbed */
+            transcriptPanel.classList.remove("mobile-hidden");
+            feedbackPanel.classList.add("mobile-hidden");
+            gsap.set(transcriptPanel, {
+              clearProps: "width,borderColor,boxShadow",
+            });
+            gsap.set(feedbackPanel, { clearProps: "width,opacity" });
+            feedbackPanel.style.opacity = "1";
+            feedbackPanel.style.width = "100%";
+            /* Reset tabs — hide Coach tab entirely */
+            tabTranscript.classList.add("active");
+            tabFeedback.classList.remove("active");
+            tabFeedback.disabled = true;
+            tabFeedback.style.display = "none";
+          } else {
+            /* Desktop: reset panels as side-by-side */
+            transcriptPanel.classList.remove("mobile-hidden");
+            feedbackPanel.classList.remove("mobile-hidden");
+            gsap.set(transcriptPanel, {
+              width: "65%",
+              borderColor: "rgba(229,229,229,0.6)",
+              boxShadow: "0 1px 2px 0 rgba(0,0,0,0.05)",
+            });
+            gsap.set(feedbackPanel, { width: 0, opacity: 0 });
+          }
+
+          /* ── Build timeline ── */
+          var tl = gsap.timeline({ delay: 0.8 });
+
+          /* Phase 1 — all messages appear together in one smooth fade */
+          tl.to(
+            messages,
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.6,
+              ease: "power2.out",
+              onComplete: function () {
+                messagesContainer.scrollTo({
+                  top: messagesContainer.scrollHeight,
+                  behavior: "smooth",
+                });
+              },
+            },
+            "+=0.2",
           );
-        }
 
-        tl.to(scanOverlay, { opacity: 0, duration: 0.2 })
-          .call(function () { transcriptPanel.classList.remove('scanning-glow'); });
+          /* Pause before scan */
+          tl.to({}, { duration: 0.3 });
 
-        if (mobile) {
-          /* ── Mobile Phase 3 — reveal Coach tab, then switch to it ── */
-          tl.call(function () {
-            tabFeedback.style.display = '';
-            tabFeedback.disabled = false;
-            tabFeedback.style.transition = 'color 0.2s, border-color 0.2s, opacity 0.25s';
-            tabFeedback.style.opacity = '0';
-            void tabFeedback.offsetWidth;
-            tabFeedback.style.opacity = '1';
-          }, null, '+=0.15');
-
-          /* Switch to Coach tab */
-          tl.call(function () {
-            switchHeroTab('feedback');
-          }, null, '+=0.18');
-
-          /* Phase 4 — feedback items appear line by line */
-          feedbackItems.forEach(function (item, i) {
-            tl.to(item, {
-              opacity: 1, y: 0, duration: 0.3, ease: 'power2.out'
-            }, i === 0 ? '+=0.18' : '+=0.14');
+          /* Phase 2 — scan effect (2 sweeps) */
+          tl.to(scanOverlay, { opacity: 1, duration: 0.15 }).call(function () {
+            transcriptPanel.classList.add("scanning-glow");
           });
 
+          for (var i = 0; i < 3; i++) {
+            tl.fromTo(
+              scanLine,
+              { top: -80 },
+              {
+                top: function () {
+                  return messagesContainer.scrollHeight + 20;
+                },
+                duration: 0.45,
+                ease: "none",
+              },
+              i === 0 ? "+=0.05" : "+=0.1",
+            );
+          }
+
+          tl.to(scanOverlay, { opacity: 0, duration: 0.2 }).call(function () {
+            transcriptPanel.classList.remove("scanning-glow");
+          });
+
+          if (mobile) {
+            /* ── Mobile Phase 3 — reveal Coach tab, then switch to it ── */
+            tl.call(
+              function () {
+                tabFeedback.style.display = "";
+                tabFeedback.disabled = false;
+                tabFeedback.style.transition =
+                  "color 0.2s, border-color 0.2s, opacity 0.25s";
+                tabFeedback.style.opacity = "0";
+                void tabFeedback.offsetWidth;
+                tabFeedback.style.opacity = "1";
+              },
+              null,
+              "+=0.15",
+            );
+
+            /* Switch to Coach tab */
+            tl.call(
+              function () {
+                switchHeroTab("feedback");
+              },
+              null,
+              "+=0.18",
+            );
+
+            /* Phase 4 — feedback items appear line by line */
+            feedbackItems.forEach(function (item, i) {
+              tl.to(
+                item,
+                {
+                  opacity: 1,
+                  y: 0,
+                  duration: 0.3,
+                  ease: "power2.out",
+                },
+                i === 0 ? "+=0.18" : "+=0.14",
+              );
+            });
+          } else {
+            /* ── Desktop Phase 3 — brief pulse then rearrange ── */
+            tl.to(transcriptPanel, {
+              borderColor: "rgba(59,130,246,0.3)",
+              boxShadow:
+                "0 0 30px -5px rgba(59,130,246,0.15), 0 1px 3px rgba(0,0,0,0.05)",
+              duration: 0.2,
+              ease: "power2.out",
+            }).to(
+              transcriptPanel,
+              {
+                borderColor: "rgba(229,229,229,0.6)",
+                boxShadow: "0 1px 2px 0 rgba(0,0,0,0.05)",
+                duration: 0.25,
+                ease: "power2.inOut",
+              },
+              "+=0.06",
+            );
+
+            /* Panels rearrange */
+            tl.to(
+              transcriptPanel,
+              { width: "50%", duration: 0.45, ease: "power3.inOut" },
+              "+=0.12",
+            ).to(
+              feedbackPanel,
+              { width: "50%", opacity: 1, duration: 0.45, ease: "power3.out" },
+              "-=0.35",
+            );
+
+            /* Phase 4 — feedback items appear line by line */
+            feedbackItems.forEach(function (item, i) {
+              tl.to(
+                item,
+                {
+                  opacity: 1,
+                  y: 0,
+                  duration: 0.3,
+                  ease: "power2.out",
+                },
+                i === 0 ? "+=0.18" : "+=0.14",
+              );
+            });
+          }
+
+          /* Show replay button */
+          tl.to(
+            replayBtn,
+            { opacity: 1, duration: 0.3, ease: "power2.out" },
+            "+=0.2",
+          );
+
+          heroTimeline = tl;
+        }
+
+        /* Global replay handler */
+        window.replayAnimation = function () {
+          runHeroAnimation();
+        };
+
+        /* Auto-run */
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", runHeroAnimation);
         } else {
-          /* ── Desktop Phase 3 — brief pulse then rearrange ── */
-          tl.to(transcriptPanel, {
-            borderColor: 'rgba(59,130,246,0.3)',
-            boxShadow: '0 0 30px -5px rgba(59,130,246,0.15), 0 1px 3px rgba(0,0,0,0.05)',
-            duration: 0.2, ease: 'power2.out'
-          }).to(transcriptPanel, {
-            borderColor: 'rgba(229,229,229,0.6)',
-            boxShadow: '0 1px 2px 0 rgba(0,0,0,0.05)',
-            duration: 0.25, ease: 'power2.inOut'
-          }, '+=0.06');
-
-          /* Panels rearrange */
-          tl.to(transcriptPanel, { width: '50%', duration: 0.45, ease: 'power3.inOut' }, '+=0.12')
-            .to(feedbackPanel,   { width: '50%', opacity: 1, duration: 0.45, ease: 'power3.out' }, '-=0.35');
-
-          /* Phase 4 — feedback items appear line by line */
-          feedbackItems.forEach(function (item, i) {
-            tl.to(item, {
-              opacity: 1, y: 0, duration: 0.3, ease: 'power2.out'
-            }, i === 0 ? '+=0.18' : '+=0.14');
-          });
+          runHeroAnimation();
         }
-
-        /* Show replay button */
-        tl.to(replayBtn, { opacity: 1, duration: 0.3, ease: 'power2.out' }, '+=0.2');
-
-        heroTimeline = tl;
-      }
-
-      /* Global replay handler */
-      window.replayAnimation = function () { runHeroAnimation(); };
-
-      /* Auto-run */
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', runHeroAnimation);
-      } else {
-        runHeroAnimation();
-      }
-    })();
+      })();
     </script>
 
     <!-- Scroll-triggered header background -->
