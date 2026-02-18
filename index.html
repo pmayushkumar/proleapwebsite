@@ -117,6 +117,67 @@
         background: rgba(0,0,0,0.08);
         border-radius: 10px;
       }
+
+      /* ── Mobile Tab bar ── */
+      #hero-tabs {
+        display: none;
+      }
+      @media (max-width: 767px) {
+        #hero-tabs {
+          display: flex;
+        }
+        #hero-animation {
+          flex-direction: column !important;
+          padding: 0 !important;
+          gap: 0 !important;
+        }
+        #transcript-panel,
+        #feedback-panel {
+          border-radius: 0 !important;
+          border: none !important;
+          box-shadow: none !important;
+          width: 100% !important;
+          flex-shrink: 1 !important;
+        }
+        /* Hide inactive tab panel on mobile */
+        #transcript-panel.mobile-hidden,
+        #feedback-panel.mobile-hidden {
+          display: none !important;
+        }
+        /* Remove min-width constraints on mobile */
+        #feedback-panel > div {
+          min-width: 0 !important;
+        }
+        /* Tab button styles */
+        .hero-tab-btn {
+          flex: 1;
+          padding: 10px 0;
+          font-size: 12px;
+          font-weight: 600;
+          letter-spacing: 0.03em;
+          color: #a3a3a3;
+          background: transparent;
+          border: none;
+          border-bottom: 2px solid transparent;
+          cursor: pointer;
+          transition: color 0.25s ease, border-color 0.25s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
+        }
+        .hero-tab-btn.active {
+          color: #3b82f6;
+          border-bottom-color: #3b82f6;
+        }
+        .hero-tab-btn:not(.active):hover {
+          color: #737373;
+        }
+        .hero-tab-btn svg {
+          width: 14px;
+          height: 14px;
+        }
+      }
     </style>
     <meta
       name="disabled-font-classes"
@@ -269,8 +330,9 @@
         </div>
 
         <!-- Hero Graphic Animation -->
+        <div class="relative w-full max-w-[1300px]">
         <div
-          class="overflow-hidden flex flex-col md:flex-row animate-slide-up bg-neutral-50 w-full h-[800px] max-w-[1300px] border-white/60 border rounded-[32px] relative shadow-2xl"
+          class="overflow-hidden flex flex-col md:flex-row animate-slide-up bg-neutral-50 w-full h-[800px] border-white/60 border rounded-[32px] relative shadow-2xl"
           style="
             animation-delay: 0.3s;
             box-shadow:
@@ -278,6 +340,20 @@
               0 30px 60px -30px rgba(0, 0, 0, 0.1);
           "
         >
+          <!-- Mobile Tab Bar -->
+          <div id="hero-tabs" class="bg-white border-b border-neutral-100 px-2 pt-2 font-geist">
+            <div class="flex">
+              <button id="tab-transcript" class="hero-tab-btn active" onclick="switchHeroTab('transcript')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
+                Transcript
+              </button>
+              <button id="tab-feedback" class="hero-tab-btn" onclick="switchHeroTab('feedback')" disabled style="display:none">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                Coach
+              </button>
+            </div>
+          </div>
+
           <!-- Animation Wrapper -->
           <div id="hero-animation" class="w-full h-full flex items-center justify-center p-8 gap-5 relative">
 
@@ -449,13 +525,14 @@
               </div>
             </div>
 
-            <!-- ═══════════ Replay Button ═══════════ -->
-            <button id="replay-btn" onclick="replayAnimation()" class="absolute bottom-5 right-5 flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-neutral-200 rounded-full px-4 py-2.5 text-[12px] font-medium text-neutral-400 hover:text-blue-500 hover:border-blue-200 hover:shadow-md transition-all duration-300 shadow-sm cursor-pointer font-geist group" style="opacity:0">
-              <svg class="transition-transform duration-500 group-hover:-rotate-180" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
-              Replay
-            </button>
-
           </div>
+        </div>
+
+        <!-- ═══════════ Replay Button (outside overflow:hidden) ═══════════ -->
+        <button id="replay-btn" onclick="replayAnimation()" class="absolute -bottom-12 right-2 z-20 flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-neutral-200 rounded-full px-4 py-2.5 text-[12px] font-medium text-neutral-400 hover:text-blue-500 hover:border-blue-200 hover:shadow-md transition-all duration-300 shadow-sm cursor-pointer font-geist group" style="opacity:0">
+          <svg class="transition-transform duration-500 group-hover:-rotate-180" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+          Replay
+        </button>
         </div>
       </main>
       <section
@@ -3246,17 +3323,46 @@
     (function () {
       let heroTimeline = null;
 
+      function isMobile() {
+        return window.innerWidth < 768;
+      }
+
+      /* ── Tab switching (mobile only) ── */
+      window.switchHeroTab = function (tab) {
+        var transcriptPanel = document.getElementById('transcript-panel');
+        var feedbackPanel   = document.getElementById('feedback-panel');
+        var tabTranscript   = document.getElementById('tab-transcript');
+        var tabFeedback     = document.getElementById('tab-feedback');
+        if (!transcriptPanel || !feedbackPanel) return;
+
+        if (tab === 'transcript') {
+          transcriptPanel.classList.remove('mobile-hidden');
+          feedbackPanel.classList.add('mobile-hidden');
+          tabTranscript.classList.add('active');
+          tabFeedback.classList.remove('active');
+        } else {
+          transcriptPanel.classList.add('mobile-hidden');
+          feedbackPanel.classList.remove('mobile-hidden');
+          tabTranscript.classList.remove('active');
+          tabFeedback.classList.add('active');
+        }
+      };
+
       function runHeroAnimation() {
         if (heroTimeline) { heroTimeline.kill(); }
 
-        const messages          = document.querySelectorAll('.msg');
-        const scanOverlay       = document.getElementById('scan-overlay');
-        const scanLine          = document.getElementById('scan-line');
-        const transcriptPanel   = document.getElementById('transcript-panel');
-        const feedbackPanel     = document.getElementById('feedback-panel');
-        const feedbackSections  = document.querySelectorAll('.fb-section');
-        const replayBtn         = document.getElementById('replay-btn');
-        const messagesContainer = document.getElementById('messages-container');
+        var mobile = isMobile();
+
+        var messages          = document.querySelectorAll('.msg');
+        var scanOverlay       = document.getElementById('scan-overlay');
+        var scanLine          = document.getElementById('scan-line');
+        var transcriptPanel   = document.getElementById('transcript-panel');
+        var feedbackPanel     = document.getElementById('feedback-panel');
+        var feedbackSections  = document.querySelectorAll('.fb-section');
+        var replayBtn         = document.getElementById('replay-btn');
+        var messagesContainer = document.getElementById('messages-container');
+        var tabTranscript     = document.getElementById('tab-transcript');
+        var tabFeedback       = document.getElementById('tab-feedback');
 
         if (!transcriptPanel || !feedbackPanel) return;
 
@@ -3264,15 +3370,34 @@
         gsap.set(messages,         { opacity: 0, y: 12 });
         gsap.set(scanOverlay,      { opacity: 0 });
         gsap.set(scanLine,         { top: -80 });
-        gsap.set(transcriptPanel,  { width: 640, borderColor: 'rgba(229,229,229,0.6)', boxShadow: '0 1px 2px 0 rgba(0,0,0,0.05)' });
-        gsap.set(feedbackPanel,    { width: 0, opacity: 0 });
         gsap.set(feedbackSections, { opacity: 0, y: 12 });
         gsap.set(replayBtn,        { opacity: 0 });
         messagesContainer.scrollTop = 0;
         transcriptPanel.classList.remove('scanning-glow');
 
+        if (mobile) {
+          /* Mobile: reset panels as tabbed */
+          transcriptPanel.classList.remove('mobile-hidden');
+          feedbackPanel.classList.add('mobile-hidden');
+          gsap.set(transcriptPanel,  { clearProps: 'width,borderColor,boxShadow' });
+          gsap.set(feedbackPanel,    { clearProps: 'width,opacity' });
+          feedbackPanel.style.opacity = '1';
+          feedbackPanel.style.width   = '100%';
+          /* Reset tabs — hide Coach tab entirely */
+          tabTranscript.classList.add('active');
+          tabFeedback.classList.remove('active');
+          tabFeedback.disabled = true;
+          tabFeedback.style.display = 'none';
+        } else {
+          /* Desktop: reset panels as side-by-side */
+          transcriptPanel.classList.remove('mobile-hidden');
+          feedbackPanel.classList.remove('mobile-hidden');
+          gsap.set(transcriptPanel, { width: 640, borderColor: 'rgba(229,229,229,0.6)', boxShadow: '0 1px 2px 0 rgba(0,0,0,0.05)' });
+          gsap.set(feedbackPanel,   { width: 0, opacity: 0 });
+        }
+
         /* ── Build timeline ── */
-        const tl = gsap.timeline({ delay: 1.2 });
+        var tl = gsap.timeline({ delay: 1.2 });
 
         /* Phase 1 — messages appear one-by-one */
         messages.forEach(function (msg, i) {
@@ -3303,27 +3428,54 @@
         tl.to(scanOverlay, { opacity: 0, duration: 0.4 })
           .call(function () { transcriptPanel.classList.remove('scanning-glow'); });
 
-        /* Brief pulse after scan */
-        tl.to(transcriptPanel, {
-          borderColor: 'rgba(59,130,246,0.3)',
-          boxShadow: '0 0 30px -5px rgba(59,130,246,0.15), 0 1px 3px rgba(0,0,0,0.05)',
-          duration: 0.4, ease: 'power2.out'
-        }).to(transcriptPanel, {
-          borderColor: 'rgba(229,229,229,0.6)',
-          boxShadow: '0 1px 2px 0 rgba(0,0,0,0.05)',
-          duration: 0.5, ease: 'power2.inOut'
-        }, '+=0.15');
+        if (mobile) {
+          /* ── Mobile Phase 3 — reveal Coach tab, then switch to it ── */
+          tl.call(function () {
+            /* Show and enable the Coach tab */
+            tabFeedback.style.display = '';
+            tabFeedback.disabled = false;
+            tabFeedback.style.transition = 'color 0.3s, border-color 0.3s, opacity 0.4s';
+            tabFeedback.style.opacity = '0';
+            /* Trigger reflow then animate in */
+            void tabFeedback.offsetWidth;
+            tabFeedback.style.opacity = '1';
+          }, null, '+=0.3');
 
-        /* Phase 3 — panels rearrange */
-        tl.to(transcriptPanel, { width: 565, duration: 0.9, ease: 'power3.inOut' }, '+=0.3')
-          .to(feedbackPanel,   { width: 565, opacity: 1, duration: 0.9, ease: 'power3.out' }, '-=0.7');
+          /* Switch to Coach tab */
+          tl.call(function () {
+            switchHeroTab('feedback');
+          }, null, '+=0.35');
 
-        /* Phase 4 — feedback sections appear */
-        feedbackSections.forEach(function (sec, i) {
-          tl.to(sec, {
-            opacity: 1, y: 0, duration: 0.5, ease: 'power2.out'
-          }, i === 0 ? '+=0.35' : '+=0.3');
-        });
+          /* Phase 4 — feedback sections appear */
+          feedbackSections.forEach(function (sec, i) {
+            tl.to(sec, {
+              opacity: 1, y: 0, duration: 0.5, ease: 'power2.out'
+            }, i === 0 ? '+=0.35' : '+=0.3');
+          });
+
+        } else {
+          /* ── Desktop Phase 3 — brief pulse then rearrange ── */
+          tl.to(transcriptPanel, {
+            borderColor: 'rgba(59,130,246,0.3)',
+            boxShadow: '0 0 30px -5px rgba(59,130,246,0.15), 0 1px 3px rgba(0,0,0,0.05)',
+            duration: 0.4, ease: 'power2.out'
+          }).to(transcriptPanel, {
+            borderColor: 'rgba(229,229,229,0.6)',
+            boxShadow: '0 1px 2px 0 rgba(0,0,0,0.05)',
+            duration: 0.5, ease: 'power2.inOut'
+          }, '+=0.15');
+
+          /* Panels rearrange */
+          tl.to(transcriptPanel, { width: 565, duration: 0.9, ease: 'power3.inOut' }, '+=0.3')
+            .to(feedbackPanel,   { width: 565, opacity: 1, duration: 0.9, ease: 'power3.out' }, '-=0.7');
+
+          /* Phase 4 — feedback sections appear */
+          feedbackSections.forEach(function (sec, i) {
+            tl.to(sec, {
+              opacity: 1, y: 0, duration: 0.5, ease: 'power2.out'
+            }, i === 0 ? '+=0.35' : '+=0.3');
+          });
+        }
 
         /* Show replay button */
         tl.to(replayBtn, { opacity: 1, duration: 0.6, ease: 'power2.out' }, '+=0.5');
