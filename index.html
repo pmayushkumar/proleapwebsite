@@ -3386,10 +3386,10 @@
         gsap.set(replayBtn,        { opacity: 0 });
         messagesContainer.scrollTop = 0;
         transcriptPanel.classList.remove('scanning-glow');
-        /* Clear typed text */
+        /* Pre-fill text (hidden by opacity:0) */
         messages.forEach(function (msg) {
           var t = msg.querySelector('.msg-text');
-          if (t) t.textContent = '';
+          if (t) t.textContent = msg.getAttribute('data-text') || '';
         });
 
         if (mobile) {
@@ -3416,34 +3416,13 @@
         /* ── Build timeline ── */
         var tl = gsap.timeline({ delay: 0.8 });
 
-        /* Phase 1 — messages appear one-by-one with word-by-word typing */
-        var WORDS_PER_SEC = 12;
-        messages.forEach(function (msg, i) {
-          var words = (msg.getAttribute('data-text') || '').split(/\s+/);
-          var textEl = msg.querySelector('.msg-text');
-          var typeDuration = words.length / WORDS_PER_SEC;
-
-          /* Show the bubble with smooth entrance */
-          tl.to(msg, {
-            opacity: 1, y: 0, duration: 0.45, ease: 'power3.out',
-            onStart: function () { if (textEl) textEl.textContent = ''; }
-          }, i === 0 ? '+=0.2' : '+=0.4');
-
-          /* Type words into it with smooth interpolation */
-          if (textEl && words.length) {
-            tl.to({ wordIndex: 0 }, {
-              wordIndex: words.length,
-              duration: typeDuration,
-              ease: 'power1.inOut',
-              roundProps: 'wordIndex',
-              onUpdate: function () {
-                var idx = Math.round(this.targets()[0].wordIndex);
-                textEl.textContent = words.slice(0, idx).join(' ');
-                messagesContainer.scrollTo({ top: messagesContainer.scrollHeight, behavior: 'smooth' });
-              }
-            }, '-=0.08');
+        /* Phase 1 — all messages appear together in one smooth fade */
+        tl.to(messages, {
+          opacity: 1, y: 0, duration: 0.6, ease: 'power2.out',
+          onComplete: function () {
+            messagesContainer.scrollTo({ top: messagesContainer.scrollHeight, behavior: 'smooth' });
           }
-        });
+        }, '+=0.2');
 
         /* Pause before scan */
         tl.to({}, { duration: 0.3 });
@@ -3452,7 +3431,7 @@
         tl.to(scanOverlay, { opacity: 1, duration: 0.15 })
           .call(function () { transcriptPanel.classList.add('scanning-glow'); });
 
-        for (var i = 0; i < 2; i++) {
+        for (var i = 0; i < 3; i++) {
           tl.fromTo(scanLine,
             { top: -80 },
             { top: function () { return messagesContainer.scrollHeight + 20; },
