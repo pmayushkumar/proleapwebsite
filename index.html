@@ -3502,19 +3502,17 @@
               "+=0.18",
             );
 
-            /* Phase 4 — feedback items appear line by line */
-            feedbackItems.forEach(function (item, i) {
-              tl.to(
-                item,
-                {
-                  opacity: 1,
-                  y: 0,
-                  duration: 0.3,
-                  ease: "power2.out",
-                },
-                i === 0 ? "+=0.18" : "+=0.14",
-              );
-            });
+            /* Phase 4 — all feedback items appear at once */
+            tl.to(
+              feedbackItems,
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.35,
+                ease: "power2.out",
+              },
+              "+=0.18",
+            );
           } else {
             /* ── Desktop Phase 3 — brief pulse then rearrange ── */
             tl.to(transcriptPanel, {
@@ -3545,19 +3543,17 @@
               "-=0.35",
             );
 
-            /* Phase 4 — feedback items appear line by line */
-            feedbackItems.forEach(function (item, i) {
-              tl.to(
-                item,
-                {
-                  opacity: 1,
-                  y: 0,
-                  duration: 0.3,
-                  ease: "power2.out",
-                },
-                i === 0 ? "+=0.18" : "+=0.14",
-              );
-            });
+            /* Phase 4 — all feedback items appear at once */
+            tl.to(
+              feedbackItems,
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.35,
+                ease: "power2.out",
+              },
+              "+=0.18",
+            );
           }
 
           /* Show replay button */
