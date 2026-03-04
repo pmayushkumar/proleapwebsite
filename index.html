@@ -298,6 +298,7 @@
         >
           <a
             href="#how-it-works"
+            onclick="gtag('event', 'click', { event_category: 'navigation', event_label: 'how_it_works' })"
             class="transition-colors hover:text-black font-geist"
           >
             How it Works
@@ -305,6 +306,7 @@
 
           <a
             href="#features"
+            onclick="gtag('event', 'click', { event_category: 'navigation', event_label: 'features' })"
             class="transition-colors hover:text-black font-geist"
           >
             Features
@@ -358,7 +360,7 @@
               Join Waitlist
             </button>
             <button
-              onclick="document.getElementById('features').scrollIntoView({ behavior: 'smooth' })"
+              onclick="gtag('event', 'click', { event_category: 'navigation', event_label: 'see_features' }); document.getElementById('features').scrollIntoView({ behavior: 'smooth' })"
               class="text-[17px] transition-all sm:w-auto flex hover:bg-white/60 font-medium text-neutral-950 font-geist bg-neutral-50/50 w-full border-white/50 border rounded-full pt-3.5 pr-8 pb-3.5 pl-8 backdrop-blur-md gap-x-2 gap-y-2 items-center justify-center"
             >
               See features
@@ -2987,6 +2989,7 @@
     </style>
     <script>
       function openWaitlistForm() {
+        gtag('event', 'join_waitlist_click', { event_category: 'conversion', event_label: 'join_waitlist' });
         var overlay = document.createElement("div");
         overlay.id = "waitlist-overlay";
         overlay.innerHTML =
