@@ -3,6 +3,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ProLeap.ai</title>
+    <!-- Google Analytics — replace G-ENRBR6C58W with your Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ENRBR6C58W"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ENRBR6C58W');
+    </script>
     <link rel="icon" href="/assets/favicon.ico" sizes="any" />
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
@@ -15,6 +23,7 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+
     <script>
       tailwind.config = {
         theme: {
@@ -307,6 +316,7 @@
 
         <div class="">
           <button
+            onclick="openWaitlistForm()"
             class="text-[15px] transition-all hover:shadow-xl hover:-translate-y-0.5 hover:bg-blue-800 font-medium text-white font-geist bg-blue-500 rounded-full pt-2.5 pr-6 pb-2.5 pl-6 shadow-lg"
           >
             Join Waitlist
@@ -329,19 +339,20 @@
           <h1
             class="md:text-[80px] leading-[1] text-6xl font-medium text-neutral-950 tracking-tight font-playfair mb-8"
           >
-            Shadow Coach for Driven professionals
+            Building Executive Presence for Senior ICs
           </h1>
           <p
             class="md:text-[19px] leading-relaxed text-lg font-medium text-slate-600 font-geist max-w-2xl mr-auto mb-10 ml-auto"
           >
-            ProLeap discovers your blind spots & negative patterns by shadowing
-            your meetings, and converts them into an actionable roadmap.
+            ProLeap shadows your meetings, discovers blind spots, proposes
+            improvement roadmap, and tracks progress
           </p>
 
           <div
             class="flex flex-col sm:flex-row gap-4 gap-x-4 gap-y-4 items-center justify-center"
           >
             <button
+              onclick="openWaitlistForm()"
               class="text-[17px] transition-all hover:shadow-xl hover:-translate-y-0.5 sm:w-auto hover:bg-blue-800 font-medium text-white font-geist bg-blue-500 w-full rounded-full pt-3.5 pr-8 pb-3.5 pl-8 shadow-lg"
             >
               Join Waitlist
@@ -918,6 +929,7 @@
           </button>
         </div>
       </main>
+
       <section
         class="md:px-6 w-full max-w-7xl z-10 mr-auto ml-auto pt-24 pr-4 pb-24 pl-4 relative"
       >
@@ -936,86 +948,111 @@
             Why ProLeap?
           </h2>
           <p class="text-lg font-medium text-slate-600 font-geist">
-            Most professional growth stalls because of "soft skills". ProLeap is
-            a personalised AI shadow coach, aware of your daily reality,
-            professional context &amp; aspirations to provide unbiased,
-            world-class coaching.
+            Senior ICs need &ldquo;human skills&rdquo; for the next level of
+            growth;<br />
+            ProLeap adds clarity to that ambiguous space
           </p>
         </div>
 
-        <!-- Problem/Value Section — Editorial Bento Layout -->
-        <div class="flex flex-col gap-5">
-          <!-- Row 1: Wide feature card -->
+        <!-- Problem/Value Section — 2x2 Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <!-- Card 1 -->
           <div
-            class="group relative overflow-hidden rounded-[28px] bg-gradient-to-br from-blue-50/80 via-slate-50 to-white border border-slate-100/80 p-10 md:p-14 flex flex-col md:flex-row md:items-end md:justify-between gap-8 transition-shadow duration-300 hover:shadow-xl"
+            class="group relative overflow-hidden rounded-[28px] bg-gradient-to-br from-blue-50/80 via-slate-50 to-white border border-slate-100/80 p-10 flex flex-col justify-between min-h-[260px] transition-shadow duration-300 hover:shadow-xl"
           >
-            <div class="relative z-10 max-w-lg">
-              <p
-                class="text-xs font-bold uppercase tracking-widest text-blue-400 font-geist mb-4"
-              >
-                Blind Spots
-              </p>
+            <div class="relative z-10">
               <h3
-                class="text-3xl md:text-4xl font-medium text-neutral-900 font-playfair leading-snug"
+                class="text-2xl md:text-3xl font-medium text-neutral-900 font-playfair leading-snug mb-5"
               >
-                Fix career blind spots
+                Hyper-personalized coaching
               </h3>
+              <p
+                class="text-[16px] leading-relaxed text-slate-500 font-geist"
+              >
+                ProLeap knows your professional aspirations, personalities of
+                colleagues, organizational constraints; leading to precise
+                &amp; actionable insights.
+              </p>
             </div>
-            <p
-              class="relative z-10 text-[17px] leading-relaxed text-slate-500 font-geist md:max-w-xs"
-            >
-              Get personalized, actionable insights within your first week of
-              meetings.
-            </p>
           </div>
 
-          <!-- Row 2: Two equal cards side by side -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-            <!-- Card 2 -->
-            <div
-              class="group relative overflow-hidden rounded-[28px] bg-gradient-to-br from-violet-50/70 via-slate-50 to-white border border-slate-100/80 p-10 flex flex-col justify-between min-h-[260px] transition-shadow duration-300 hover:shadow-xl"
-            >
-              <div class="relative z-10">
-                <p
-                  class="text-xs font-bold uppercase tracking-widest text-violet-400 font-geist mb-4"
-                >
-                  Metrics
-                </p>
-                <h3
-                  class="text-2xl md:text-3xl font-medium text-neutral-900 font-playfair leading-snug mb-5"
-                >
-                  Quantify "soft skills"
-                </h3>
-                <p
-                  class="text-[16px] leading-relaxed text-slate-500 font-geist"
-                >
-                  Track your leadership growth with unbiased, data-driven weekly
-                  metrics.
-                </p>
-              </div>
+          <!-- Card 2 -->
+          <div
+            class="group relative overflow-hidden rounded-[28px] bg-gradient-to-br from-violet-50/70 via-slate-50 to-white border border-slate-100/80 p-10 flex flex-col justify-between min-h-[260px] transition-shadow duration-300 hover:shadow-xl"
+          >
+            <div class="relative z-10">
+              <h3
+                class="text-2xl md:text-3xl font-medium text-neutral-900 font-playfair leading-snug mb-5"
+              >
+                Discover blind-spots
+              </h3>
+              <p
+                class="text-[16px] leading-relaxed text-slate-500 font-geist"
+              >
+                Connect the dots on your behaviors across meetings, e.g.
+                defensiveness with seniors, jargon-heavy when under-confident
+              </p>
             </div>
+          </div>
 
-            <!-- Card 3 -->
-            <div
-              class="group relative overflow-hidden rounded-[28px] bg-gradient-to-br from-emerald-50/60 via-slate-50 to-white border border-slate-100/80 p-10 flex flex-col justify-between min-h-[260px] transition-shadow duration-300 hover:shadow-xl"
-            >
-              <div class="relative z-10">
-                <p
-                  class="text-xs font-bold uppercase tracking-widest text-emerald-500 font-geist mb-4"
-                >
-                  Autopilot
-                </p>
-                <h3
-                  class="text-2xl md:text-3xl font-medium text-neutral-900 font-playfair leading-snug mb-5"
-                >
-                  Growth on Autopilot
-                </h3>
-                <p
-                  class="text-[16px] leading-relaxed text-slate-500 font-geist"
-                >
-                  Sharpen your skills silently during your workday; no homework
-                  required.
-                </p>
+          <!-- Card 3 -->
+          <div
+            class="group relative overflow-hidden rounded-[28px] bg-gradient-to-br from-emerald-50/60 via-slate-50 to-white border border-slate-100/80 p-10 flex flex-col justify-between min-h-[260px] transition-shadow duration-300 hover:shadow-xl"
+          >
+            <div class="relative z-10">
+              <h3
+                class="text-2xl md:text-3xl font-medium text-neutral-900 font-playfair leading-snug mb-5"
+              >
+                Actionable roadmap
+              </h3>
+              <p
+                class="text-[16px] leading-relaxed text-slate-500 font-geist"
+              >
+                Convert your blind spots into a roadmap of improvements
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="group relative overflow-hidden rounded-[28px] bg-gradient-to-br from-amber-50/70 via-slate-50 to-white border border-slate-100/80 p-10 flex flex-col justify-between min-h-[260px] transition-shadow duration-300 hover:shadow-xl"
+          >
+            <div class="relative z-10">
+              <h3
+                class="text-2xl md:text-3xl font-medium text-neutral-900 font-playfair leading-snug mb-5"
+              >
+                Progress tracking
+              </h3>
+              <p
+                class="text-[16px] leading-relaxed text-slate-500 font-geist"
+              >
+                Track metrics tailored to your growth opportunities
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial -->
+        <div class="w-full max-w-2xl mx-auto px-4 pt-16 text-center">
+          <p
+            class="text-xl md:text-2xl font-medium text-neutral-800 font-playfair italic leading-relaxed mb-6"
+          >
+            &ldquo;People are too nice to give useful feedback on &lsquo;human
+            skills&rsquo;. ProLeap is unbiased, evidence-based &amp;
+            hyper-personalized to me!&rdquo;
+          </p>
+          <div class="flex items-center justify-center gap-3">
+            <img
+              src="/images/sanjula-avatar.png"
+              class="w-10 h-10 rounded-full object-cover border border-slate-100"
+              alt="Sanjula Bhaumik"
+            />
+            <div class="text-left">
+              <div class="text-sm font-bold text-slate-900 font-geist">
+                Sanjula Bhaumik
+              </div>
+              <div class="text-xs font-medium text-slate-500 font-geist">
+                Marketing Director
               </div>
             </div>
           </div>
@@ -1290,6 +1327,32 @@
             </div>
           </div>
         </div>
+
+        <!-- Testimonial -->
+        <div class="w-full max-w-2xl mx-auto px-4 pt-16 text-center">
+          <p
+            class="text-xl md:text-2xl font-medium text-neutral-800 font-playfair italic leading-relaxed mb-6"
+          >
+            &ldquo;ProLeap knows about the people I work with, their
+            personalities, my company culture. And so the coaching is less fluffy
+            &amp; more actionable!&rdquo;
+          </p>
+          <div class="flex items-center justify-center gap-3">
+            <img
+              src="/images/nupur-avatar.png"
+              class="w-10 h-10 rounded-full object-cover border border-slate-100"
+              alt="Nupur Goyal"
+            />
+            <div class="text-left">
+              <div class="text-sm font-bold text-slate-900 font-geist">
+                Nupur Goyal
+              </div>
+              <div class="text-xs font-medium text-slate-500 font-geist">
+                Director, Human Resources
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
     <section
@@ -1339,14 +1402,16 @@
           <p
             class="leading-relaxed text-lg font-medium text-slate-600 font-geist mb-10"
           >
-            Ask clarifying questions - "can you write talking points for my next
-            1:1 with Ron?"
+            Provide context &amp; get things done:
             <br />
             <br />
-            Provide more context - "Gary has a tendancy to micromanage"
+            - Gary has a tendancy to micromanage
+            <br />
+            - Write talking pointers for my next 1:1 with manager
           </p>
 
           <button
+            onclick="openWaitlistForm()"
             class="text-[15px] transition-all hover:shadow-xl hover:-translate-y-0.5 hover:bg-blue-800 font-semibold text-white font-geist bg-blue-500 rounded-full mb-12 pt-3.5 pr-8 pb-3.5 pl-8 shadow-lg"
           >
             Join Waitlist
@@ -1380,6 +1445,7 @@
           </p>
 
           <button
+            onclick="openWaitlistForm()"
             class="text-[15px] transition-all hover:shadow-xl hover:-translate-y-0.5 hover:bg-blue-800 font-semibold text-white font-geist bg-blue-500 rounded-full mb-12 pt-3.5 pr-8 pb-3.5 pl-8 shadow-lg"
           >
             Join Waitlist
@@ -1445,6 +1511,7 @@
           </p>
 
           <button
+            onclick="openWaitlistForm()"
             class="text-[15px] transition-all hover:shadow-xl hover:-translate-y-0.5 hover:bg-blue-800 font-semibold text-white font-geist bg-blue-500 rounded-full mb-12 pt-3.5 pr-8 pb-3.5 pl-8 shadow-lg"
           >
             Join Waitlist
@@ -1476,6 +1543,7 @@
           </p>
 
           <button
+            onclick="openWaitlistForm()"
             class="text-[15px] transition-all hover:shadow-xl hover:-translate-y-0.5 hover:bg-blue-800 font-semibold text-white font-geist bg-blue-500 rounded-full mb-12 pt-3.5 pr-8 pb-3.5 pl-8 shadow-lg"
           >
             Join Waitlist
@@ -2874,6 +2942,69 @@
         window.addEventListener("scroll", updateHeaderBackground);
         updateHeaderBackground();
       })();
+    </script>
+
+    <!-- Waitlist Form -->
+    <style>
+      #waitlist-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 99999;
+        background: #fff;
+      }
+      #waitlist-overlay iframe {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border: 0;
+        width: 100%;
+        height: 100%;
+      }
+      #waitlist-close {
+        position: fixed;
+        top: 16px;
+        right: 20px;
+        z-index: 100000;
+        background: rgba(0,0,0,0.6);
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        font-size: 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+      }
+      #waitlist-close:hover { background: rgba(0,0,0,0.8); }
+    </style>
+    <script>
+      function openWaitlistForm() {
+        var overlay = document.createElement("div");
+        overlay.id = "waitlist-overlay";
+        overlay.innerHTML =
+          '<button id="waitlist-close" aria-label="Close">&times;</button>' +
+          '<iframe src="https://tally.so/r/81dYWA?transparentBackground=1" ' +
+          'width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" ' +
+          'title="Join ProLeap Waitlist"></iframe>';
+        document.body.appendChild(overlay);
+        document.body.style.overflow = "hidden";
+
+        document.getElementById("waitlist-close").addEventListener("click", closeWaitlistForm);
+      }
+
+      function closeWaitlistForm() {
+        var overlay = document.getElementById("waitlist-overlay");
+        if (overlay) overlay.remove();
+        document.body.style.overflow = "";
+      }
     </script>
   </body>
 </html>
