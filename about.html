@@ -1,0 +1,509 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About — ProLeap.ai</title>
+    <meta name="description" content="About ProLeap.ai — why we built ProLeap and who's behind it." />
+    <!-- Open Graph -->
+    <meta property="og:title" content="About — ProLeap.ai" />
+    <meta property="og:description" content="About ProLeap.ai — why we built ProLeap and who's behind it." />
+    <meta property="og:image" content="https://proleap.ai/assets/logo.png" />
+    <meta property="og:url" content="https://proleap.ai/about" />
+    <meta property="og:type" content="website" />
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ENRBR6C58W"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ENRBR6C58W');
+    </script>
+    <!-- Vercel Analytics -->
+    <script defer src="/_vercel/insights/script.js"></script>
+    <link rel="icon" href="/assets/favicon.ico" sizes="any" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Nunito:wght@600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              nunito: ["Nunito", "sans-serif"],
+            },
+            colors: {
+              cream: {
+                50: "#FDFBF9",
+                100: "#F7F5F2",
+                200: "#EAE5DC",
+              },
+            },
+            animation: {
+              "fade-in": "fadeIn 1s ease-out forwards",
+              "slide-up": "slideUp 1s ease-out forwards",
+            },
+            keyframes: {
+              fadeIn: {
+                "0%": { opacity: "0" },
+                "100%": { opacity: "1" },
+              },
+              slideUp: {
+                "0%": { opacity: "0", transform: "translateY(20px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+
+    <link
+      id="all-fonts-link-font-playfair"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap"
+    />
+    <style id="all-fonts-style-font-playfair">
+      .font-playfair {
+        font-family: "Playfair Display", serif !important;
+      }
+    </style>
+    <link
+      id="all-fonts-link-font-geist"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"
+    />
+    <style id="all-fonts-style-font-geist">
+      .font-geist {
+        font-family: "Geist", sans-serif !important;
+      }
+    </style>
+    <link
+      id="all-fonts-link-font-inter"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+    />
+    <style id="all-fonts-style-font-inter">
+      .font-inter {
+        font-family: "Inter", sans-serif !important;
+      }
+    </style>
+  </head>
+
+  <body
+    class="antialiased min-h-screen overflow-x-hidden selection:bg-black selection:text-white text-slate-800 font-sans bg-[#ABCDE9] relative"
+  >
+    <!-- Background Layer: Sky Image & Cloud/Gradient Simulation -->
+    <div class="fixed inset-0 z-0 pointer-events-none">
+      <img
+        src="https://images.unsplash.com/photo-1707130868349-3ed75fc7fe8f?w=3840&amp;q=80"
+        alt="Sky Background"
+        class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-multiply"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-[#A6CBE8]/20 via-[#BFD9EF]/40 to-[#EAE3D6]"
+      ></div>
+      <img
+        src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4734259a-bad7-422f-981e-ce01e79184f2_1600w.jpg"
+        class="absolute top-[20%] -left-[10%] w-[50%] opacity-40 mix-blend-screen blur-xl pointer-events-none"
+        alt="cloud"
+      />
+      <img
+        src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg"
+        class="absolute top-[30%] -right-[10%] w-[50%] opacity-40 mix-blend-screen blur-xl pointer-events-none"
+        alt="cloud"
+      />
+    </div>
+
+    <!-- Header -->
+    <header
+      id="main-header"
+      class="sticky top-0 z-50 w-full transition-all duration-300 ease-in-out"
+    >
+      <nav
+        class="flex animate-fade-in md:px-12 w-full max-w-7xl mr-auto ml-auto pt-6 pr-6 pb-6 pl-6 items-center justify-between"
+      >
+        <a href="/" class="flex gap-2 gap-x-2 gap-y-2 items-center">
+          <img src="assets/logo.png" alt="ProLeap" class="h-8 w-auto" />
+          <span
+            class="text-xl font-medium text-slate-900 tracking-tight font-playfair"
+          >
+            ProLeap
+          </span>
+        </a>
+
+        <div
+          class="hidden md:flex gap-8 text-[15px] font-medium text-slate-700 gap-x-8 gap-y-8 items-center"
+        >
+          <a
+            href="/"
+            class="transition-colors hover:text-black font-geist"
+          >
+            Home
+          </a>
+        </div>
+
+        <div>
+          <button
+            onclick="openWaitlistForm()"
+            class="text-[15px] transition-all hover:shadow-xl hover:-translate-y-0.5 hover:bg-blue-800 font-medium text-white font-geist bg-blue-500 rounded-full pt-2.5 pr-6 pb-2.5 pl-6 shadow-lg"
+          >
+            Join Waitlist
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Content -->
+    <div class="flex flex-col min-h-screen z-10 relative">
+      <main class="flex-grow flex flex-col w-full max-w-4xl mr-auto ml-auto pt-8 md:pt-16 pr-6 pb-20 pl-6">
+
+        <!-- Hero heading -->
+        <div class="animate-slide-up mb-16" style="animation-delay: 0.1s">
+          <h1
+            class="md:text-[72px] text-5xl leading-[1.1] font-medium text-neutral-950 tracking-tight font-playfair mb-8"
+          >
+            About Us
+          </h1>
+        </div>
+
+        <!-- Intro text -->
+        <section class="mb-20 animate-slide-up" style="animation-delay: 0.2s">
+          <h2
+            class="text-2xl md:text-3xl font-medium text-neutral-950 font-playfair leading-snug mb-6"
+          >
+            We built ProLeap because high-quality, personalized coaching shouldn't be reserved for the C-suite.
+          </h2>
+          <p class="text-[16px] md:text-[17px] leading-relaxed text-slate-600 font-geist mb-5 max-w-3xl">
+            Have you ever received feedback like "Work on your executive presence" or "You need to be more strategic"? For high-potential Senior ICs, this ambiguity is a career ceiling. It is frustrating to be told <strong>what</strong> to fix without being shown <strong>how</strong> to do it in the flow of your actual work.
+          </p>
+          <p class="text-[16px] md:text-[17px] leading-relaxed text-slate-600 font-geist mb-5 max-w-3xl">
+            This gap leads to cycles of anxiety and untapped potential. ProLeap was built to bridge that gap.
+          </p>
+          <p class="text-[16px] md:text-[17px] leading-relaxed text-slate-600 font-geist mb-5 max-w-3xl">
+            Professional growth shouldn't be a mystery. <span class="italic text-blue-500 font-playfair font-medium">You don't lack talent. You lack a mirror.</span>
+          </p>
+          <p class="text-[16px] md:text-[17px] leading-relaxed text-slate-600 font-geist max-w-3xl">
+            ProLeap is an ambient partner that understands your specific context — your stakeholders, your company culture, and your unique aspirations. It is designed to be the coach we always wanted: one that observes your real-time performance and knows exactly when you're losing the audience, when you're being too directive, or when you've finally hit your stride.
+          </p>
+        </section>
+
+        <!-- Privacy-First DNA -->
+        <section class="mb-20 animate-slide-up" style="animation-delay: 0.4s">
+          <h2
+            class="text-2xl md:text-3xl font-medium text-neutral-950 font-playfair leading-snug mb-4"
+          >
+            Our "Privacy-First" DNA
+          </h2>
+          <p class="text-lg font-medium text-neutral-800 font-geist mb-4">
+            Your vulnerability is a feature, <span class="italic text-blue-500">not a data point.</span>
+          </p>
+          <p class="text-[16px] md:text-[17px] leading-relaxed text-slate-600 font-geist max-w-3xl">
+            Coaching requires trust. ProLeap is built with a "Privacy-First, Local-First" DNA. Your data stays on your machine. Your "missed moments" stay between you and your coach.
+          </p>
+        </section>
+
+        <!-- The Science -->
+        <section class="mb-20 animate-slide-up" style="animation-delay: 0.5s">
+          <h2
+            class="text-2xl md:text-3xl font-medium text-neutral-950 font-playfair leading-snug mb-3"
+          >
+            The Science
+          </h2>
+          <p class="text-[16px] md:text-[17px] leading-relaxed text-slate-600 font-geist mb-8">
+            Based on world-class coaching frameworks like:
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="bg-white/50 border border-white/40 rounded-2xl p-6">
+              <h3 class="text-lg font-semibold text-neutral-900 font-geist mb-1">The Pyramid Principle</h3>
+              <p class="text-[15px] text-slate-500 font-geist">Structured communication for executive impact</p>
+            </div>
+            <div class="bg-white/50 border border-white/40 rounded-2xl p-6">
+              <h3 class="text-lg font-semibold text-neutral-900 font-geist mb-1">Radical Candor</h3>
+              <p class="text-[15px] text-slate-500 font-geist">Care personally, challenge directly</p>
+            </div>
+            <div class="bg-white/50 border border-white/40 rounded-2xl p-6">
+              <h3 class="text-lg font-semibold text-neutral-900 font-geist mb-1">SBI Framework</h3>
+              <p class="text-[15px] text-slate-500 font-geist">Situation, Behavior, Impact</p>
+            </div>
+            <div class="bg-white/50 border border-white/40 rounded-2xl p-6">
+              <h3 class="text-lg font-semibold text-neutral-900 font-geist mb-1">And Many More…</h3>
+              <p class="text-[15px] text-slate-500 font-geist">30+ frameworks integrated into one intelligent system</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Mission Contributors -->
+        <section class="mb-20 animate-slide-up" style="animation-delay: 0.6s">
+          <h2
+            class="text-2xl md:text-3xl font-medium text-neutral-950 font-playfair leading-snug mb-10"
+          >
+            Mission Contributors
+          </h2>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
+            <!-- Ayush -->
+            <div class="flex flex-col items-center text-center">
+              <img
+                src="images/ayush-avatar.jpg"
+                alt="Ayush Kumar"
+                class="w-28 h-28 rounded-full object-cover mb-4 shadow-md"
+                loading="lazy"
+              />
+              <h3 class="text-[15px] font-semibold text-neutral-900 font-geist">Ayush Kumar</h3>
+              <p class="text-[13px] text-blue-500 font-geist">Founder & Product Lead</p>
+            </div>
+            <!-- Prarthana -->
+            <div class="flex flex-col items-center text-center">
+              <img
+                src="images/prarthana-avatar.jpeg"
+                alt="Prarthana Bhattacharyya"
+                class="w-28 h-28 rounded-full object-cover mb-4 shadow-md"
+                loading="lazy"
+              />
+              <h3 class="text-[15px] font-semibold text-neutral-900 font-geist">Prarthana Bhattacharyya</h3>
+              <p class="text-[13px] text-blue-500 font-geist">Advisor, LLM Model Training</p>
+            </div>
+            <!-- Supratim -->
+            <div class="flex flex-col items-center text-center">
+              <img
+                src="images/supratim-avatar.jpeg"
+                alt="Supratim Chakraborty"
+                class="w-28 h-28 rounded-full object-cover mb-4 shadow-md"
+                loading="lazy"
+              />
+              <h3 class="text-[15px] font-semibold text-neutral-900 font-geist">Supratim Chakraborty</h3>
+              <p class="text-[13px] text-blue-500 font-geist">Design Lead</p>
+            </div>
+            <!-- Claude Code -->
+            <div class="flex flex-col items-center text-center">
+              <img
+                src="images/claude-avatar.png"
+                alt="Claude Code"
+                class="w-28 h-28 rounded-full object-cover mb-4 shadow-md"
+                loading="lazy"
+              />
+              <h3 class="text-[15px] font-semibold text-neutral-900 font-geist">Claude Code</h3>
+              <p class="text-[13px] text-blue-500 font-geist">Builder</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="text-center mb-20 animate-slide-up" style="animation-delay: 0.7s">
+          <h2 class="text-3xl md:text-4xl font-medium text-neutral-950 font-playfair mb-8">
+            Stop guessing. <span class="italic text-blue-500 font-playfair">Start growing.</span>
+          </h2>
+          <button
+            onclick="openWaitlistForm()"
+            class="text-[15px] transition-all hover:shadow-xl hover:-translate-y-0.5 hover:bg-blue-800 font-medium text-white font-geist bg-blue-500 rounded-full pt-3 pr-8 pb-3 pl-8 shadow-lg"
+          >
+            Join Waitlist
+          </button>
+        </section>
+
+      </main>
+
+      <!-- Footer -->
+      <footer
+        class="z-10 w-full max-w-7xl mr-auto ml-auto pt-12 pr-6 pb-12 pl-6 relative"
+      >
+        <div
+          class="md:p-12 lg:p-16 bg-blue-100 border-white/20 border rounded-[40px] pt-8 pr-8 pb-8 pl-8 shadow-sm"
+        >
+          <div
+            class="flex flex-col lg:flex-row gap-12 lg:gap-24 mb-16 gap-x-12 gap-y-12 justify-between"
+          >
+            <!-- Brand Section -->
+            <div class="max-w-sm">
+              <div class="flex items-center gap-2 mb-6">
+                <img src="assets/logo.png" alt="ProLeap" class="h-8 w-auto" />
+                <span
+                  class="text-xl font-medium text-slate-900 tracking-tight font-playfair"
+                >
+                  ProLeap
+                </span>
+              </div>
+              <p
+                class="text-[15px] leading-relaxed font-medium text-slate-600 font-geist"
+              >
+                ProLeap discovers your blind spots & negative patterns by
+                shadowing your meetings, and converts them into an actionable
+                roadmap.
+              </p>
+            </div>
+
+            <!-- Links Section -->
+            <div class="flex gap-12 sm:gap-24 gap-x-12 gap-y-12">
+              <!-- Product Column -->
+              <div class="flex flex-col gap-4 gap-x-4 gap-y-4">
+                <h4
+                  class="uppercase text-xs font-semibold text-neutral-950 tracking-widest font-geist mb-1"
+                >
+                  Product
+                </h4>
+                <a
+                  href="/#features"
+                  class="text-[15px] hover:text-[#1A1A1A] transition-colors text-slate-600 font-geist"
+                >
+                  Features
+                </a>
+                <a
+                  href="/about"
+                  class="text-[15px] hover:text-[#1A1A1A] transition-colors text-slate-600 font-geist"
+                >
+                  About
+                </a>
+              </div>
+
+              <!-- Information Column -->
+              <div class="flex flex-col gap-4">
+                <h4
+                  class="uppercase text-xs font-semibold text-neutral-950 tracking-widest font-geist mb-1"
+                >
+                  Information
+                </h4>
+                <a
+                  href="#"
+                  class="text-[15px] hover:text-[#1A1A1A] transition-colors text-slate-600 font-geist"
+                >
+                  Contact
+                </a>
+                <a
+                  href="/privacy"
+                  class="text-[15px] hover:text-[#1A1A1A] transition-colors text-slate-600 font-geist"
+                >
+                  Privacy
+                </a>
+                <a
+                  href="/terms"
+                  class="text-[15px] hover:text-[#1A1A1A] transition-colors text-slate-600 font-geist"
+                >
+                  Terms
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <div class="h-px bg-slate-900/5 w-full mb-8"></div>
+
+          <!-- Bottom Section -->
+          <div
+            class="flex flex-col md:flex-row md:items-center gap-4 text-[13px] text-slate-500 font-sans gap-x-4 gap-y-4 items-start justify-between"
+          >
+            <div class="font-geist">&copy; 2026 ProLeap</div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Initialize Icons -->
+    <script>
+      lucide.createIcons();
+    </script>
+
+    <!-- Header frost on scroll -->
+    <script>
+      (function () {
+        const header = document.getElementById("main-header");
+        const scrollThreshold = 50;
+        const frostClass =
+          "bg-white/40 backdrop-blur-md border-b border-white/20";
+
+        function updateHeaderBackground() {
+          if (window.scrollY > scrollThreshold) {
+            header.classList.add(...frostClass.split(" "));
+          } else {
+            header.classList.remove(...frostClass.split(" "));
+          }
+        }
+
+        window.addEventListener("scroll", updateHeaderBackground);
+        updateHeaderBackground();
+      })();
+    </script>
+
+    <!-- Waitlist Form -->
+    <style>
+      #waitlist-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 99999;
+        background: #fff;
+      }
+      #waitlist-overlay iframe {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border: 0;
+        width: 100%;
+        height: 100%;
+      }
+      #waitlist-close {
+        position: fixed;
+        top: 16px;
+        right: 20px;
+        z-index: 100000;
+        background: rgba(0,0,0,0.6);
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        font-size: 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+      }
+      #waitlist-close:hover { background: rgba(0,0,0,0.8); }
+    </style>
+    <script>
+      function openWaitlistForm() {
+        gtag('event', 'join_waitlist_click', { event_category: 'conversion', event_label: 'join_waitlist' });
+        var overlay = document.createElement("div");
+        overlay.id = "waitlist-overlay";
+        overlay.innerHTML =
+          '<button id="waitlist-close" aria-label="Close">&times;</button>' +
+          '<iframe src="https://tally.so/r/81dYWA?transparentBackground=1" ' +
+          'width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" ' +
+          'title="Join ProLeap Waitlist"></iframe>';
+        document.body.appendChild(overlay);
+        document.body.style.overflow = "hidden";
+
+        document.getElementById("waitlist-close").addEventListener("click", closeWaitlistForm);
+      }
+
+      function closeWaitlistForm() {
+        var overlay = document.getElementById("waitlist-overlay");
+        if (overlay) overlay.remove();
+        document.body.style.overflow = "";
+      }
+    </script>
+  </body>
+</html>
