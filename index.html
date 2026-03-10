@@ -3031,6 +3031,10 @@
         if (overlay) overlay.remove();
         document.body.style.overflow = "";
       }
+
+      if (new URLSearchParams(window.location.search).has('trial')) {
+        openWaitlistForm();
+      }
     </script>
   </body>
 </html>
