@@ -2,7 +2,7 @@
 
 # ProLeap 
 
-### Your AI-Powered Leadership Coach
+### Your AI-Powered Executive Coach
 
 ProLeap turns every meeting into a coaching opportunity. It listens, analyzes, and delivers personalized feedback to help you grow as a leader — automatically. [Website](https://proleap.ai)
 
