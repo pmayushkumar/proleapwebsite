@@ -1,10 +1,10 @@
 <div align="center">
 
-# ProLeap [Website](https://proleap.ai)
+# ProLeap 
 
 ### Your AI-Powered Leadership Coach
 
-ProLeap turns every meeting into a coaching opportunity. It listens, analyzes, and delivers personalized feedback to help you grow as a leader — automatically.
+ProLeap turns every meeting into a coaching opportunity. It listens, analyzes, and delivers personalized feedback to help you grow as a leader — automatically. [Website](https://proleap.ai)
 
 
 
