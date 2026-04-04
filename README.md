@@ -53,7 +53,7 @@ Visit [proleap.ai](https://proleap.ai) to join the alpha.
 
 ## Contact
 
-Questions? Reach out at [hello@proleap.ai](mailto:hello@proleap.ai)
+Questions? Reach out at [ayush@proleap.ai](mailto:ayush@proleap.ai)
 
 ---
 
