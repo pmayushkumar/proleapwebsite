@@ -44,8 +44,7 @@ It works silently in the background during your meetings, then provides personal
 
 ## Demo
 
-<!-- Add a demo video or GIF here -->
-*Coming soon*
+https://github.com/user-attachments/assets/f02cbcfa-fed7-4090-b607-add769deb06f
 
 ## Get Started
 
